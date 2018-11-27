@@ -10,13 +10,13 @@
 
 <body>
     <header>
-        <h1><a href="index.html">Vote It</a></h1>
+        <h1><a href="index.php">Vote It</a></h1>
         <form method="post" action="action_login.php">
             <input type="text" name="username" placeholder="username" required>
             <input type="password" name="password" placeholder="password" required>
             <input type="submit" value="Login">
         </form>
-        <p>You don't have an account? <a href="action_signup.php">Sign Up!</a></p>
+        <p>You don't have an account? <a href="signup.php">Sign Up!</a></p>
     </header>
     <section id="stories_feed">
         <article class="story">
