@@ -20,6 +20,18 @@
             </ul>
             <?php } ?>
         </header>
+
+        <aside class="side_bar">
+            <section id="create_post">
+                <p>Create a Post</p>
+            </section>
+            <section id="trending_categories">
+                <p>Trending Categories</p>
+            </section>
+            <section id="recent_posts">
+                <p>Recent Posts</p>
+            </section>
+        </aside>
 <?php } ?>
 
 <?php function draw_footer() { ?>
