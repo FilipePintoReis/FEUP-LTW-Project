@@ -1,0 +1,21 @@
+/**
+ * Body
+ */
+
+body {
+  max-width: 80em;
+  margin: auto;
+
+  background-color: PaleGreen;
+
+}
+
+a {
+  color: Black;
+  text-decoration: none;
+}
+
+article p {
+  font-family: Lucida Sans Unicode;
+
+}

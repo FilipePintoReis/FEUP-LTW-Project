@@ -7,6 +7,7 @@
         <title>VoteIt</title>
         <meta charset="utf-8">
         <link rel=icon href="images/icon.jpeg">
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
