@@ -6,7 +6,7 @@ body {
   max-width: 80em;
   margin: auto;
 
-  background-color: PaleGreen;
+  background-image: url("../images/mandala.jpg");
 
 }
 
@@ -18,4 +18,59 @@ a {
 article p {
   font-family: Lucida Sans Unicode;
 
+}
+
+
+article.story{
+  background-color: Purple;
+
+  opacity: 1;
+}
+
+article.story > h2 {
+  font-style: italic;
+  height: 1%;
+  margin: 1%;
+  text-align: center;
+}
+
+article.story > img{
+  background-color: Purple;
+  border-style: solid;
+  border-top-width: thick;
+  border-bottom-width: thick;
+  border-left-width: 20px;
+  border-right-width: 20px;
+  border-color: Green;
+
+  display: block;
+  margin: auto;
+  padding: auto;
+  opacity: 1;
+
+  max-height: 50em;
+  
+}
+
+.side_bar{
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  opacity: 0.8;
+}
+
+.side_bar section p{
+  font-size: 1.7em;
+  text-align: center;
+  color: Orange;
+}
+
+.side_bar section:hover p{
+  text-decoration: underline;
 }

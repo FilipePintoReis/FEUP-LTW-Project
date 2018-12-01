@@ -1,5 +1,6 @@
 <?php function draw_stories_feed() {?>
     <section id="stories_feed">
+
         <article class="story">
             <h2>First Story Title</h2>
             <img src="images/story_image.jpeg" alt="tHe mEmEs">
@@ -31,6 +32,7 @@
                 </form>
             </section>
         </article>
+
         <article class="story">
             <h2>Second Story Title</h2>
             <img src="images/story_image.jpeg" alt="tHe mEmEs">
@@ -62,8 +64,10 @@
                 </form>
             </section>
         </article>
+
         <article class="story">
             <h2>Third Story Title</h2>
+            <backg id = "backg"> </backg>
             <img src="images/story_image.jpeg" alt="tHe mEmEs">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus felis nec felis posuere dignissim in euismod orci.
@@ -93,5 +97,6 @@
                 </form>
             </section>
         </article>
+
     </section>
 <?php } ?>
