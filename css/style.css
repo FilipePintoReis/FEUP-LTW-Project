@@ -7,6 +7,7 @@ body {
   margin: auto;
 
   background-image: url("../images/mandala.jpg");
+  background-attachment: fixed;
 
 }
 
@@ -22,9 +23,8 @@ article p {
 
 
 article.story{
-  background-color: Purple;
+  background-color: rgba(255,255,255,0.5);
 
-  opacity: 1;
 }
 
 article.story > h2 {
