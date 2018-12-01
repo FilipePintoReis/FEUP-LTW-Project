@@ -16,11 +16,6 @@ a {
   text-decoration: none;
 }
 
-article p {
-  font-family: Lucida Sans Unicode;
-
-}
-
 
 article.story{
   background-color: rgba(255,255,255,0.5);
@@ -52,9 +47,16 @@ article.story > img{
   
 }
 
+article.story > p{
+  font-family: Lucida Sans Unicode;
+  height: 1%;
+  margin: 1%;
+  text-align: left;
+}
+
 .side_bar{
-  height: 100%;
-  width: 160px;
+  height: 65%;
+  width: 50px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -62,6 +64,11 @@ article.story > img{
   background-color: #111;
   overflow-x: hidden;
   padding-top: 20px;
+  opacity: 0.3;
+}
+
+.side_bar:hover{
+  width:160px;
   opacity: 0.8;
 }
 
@@ -73,4 +80,5 @@ article.story > img{
 
 .side_bar section:hover p{
   text-decoration: underline;
+  transform: translate(1px, 10%);
 }
