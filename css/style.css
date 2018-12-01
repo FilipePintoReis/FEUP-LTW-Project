@@ -6,9 +6,9 @@ body {
   max-width: 80em;
   margin: auto;
 
-  background-image: url("../images/mandala.jpg");
+  background-image: url("../images/backghe.png");
   background-attachment: fixed;
-
+  background-size: 50px;
 }
 
 a {
