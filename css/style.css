@@ -11,12 +11,15 @@ body {
   background-size: 50px;
 }
 
-a {
+header{
   color: Black;
   text-decoration: none;
+  position: sticky;
+  top:0;
+
 }
 
-
+/***********************************************STORIES******************************************************************/
 article.story{
   background-color: rgba(255,255,255,0.5);
   border: 1px solid Black;
@@ -31,7 +34,6 @@ article.story > h2 {
 }
 
 article.story > img{
-  //background-color: Orange;
   border-style: dashed;
   border-top-width: thick;
   border-bottom-width: thick;
@@ -44,9 +46,22 @@ article.story > img{
   padding: auto;
   opacity: 1;
 
-  max-height: 30em;
+  min-width: 15%;
+
   border-radius: 5px;
   box-shadow: -1px -1px 25px Blue;
+}
+
+@media only screen and (min-width: 768px){
+  article.story > img{
+    max-width: 30%;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  article.story > img{
+    max-width: 25%;
+  }
 }
 
 article.story > p{
@@ -55,6 +70,8 @@ article.story > p{
   margin: 1%;
   text-align: left;
 }
+
+/***********************************************STORIES******************************************************************/
 
 .side_bar{
   height: 100%;
@@ -97,3 +114,4 @@ article.story > p{
   height: 100%;
   background-color: LightCyan;
 }
+
