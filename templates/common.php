@@ -22,6 +22,9 @@
         </header>
 
         <aside class="side_bar">
+            <section>
+                <img src="images/pic1.png" alt="tHe mEmEs">
+            </section>
             <section id="create_post">
                 <p>Create a Post</p>
             </section>
