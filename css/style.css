@@ -57,7 +57,7 @@ article.story > p{
 }
 
 .side_bar{
-  height: 65%;
+  height: 100%;
   width: 60px;
   position: fixed;
   z-index: 1;
