@@ -6,9 +6,10 @@ body {
   max-width: 80em;
   margin: auto;
 
-  background-image: url("../images/backghe.png");
+  background-image: url("../images/backtest.png");
   background-attachment: fixed;
-  background-size: 50px;
+  background-size: 1200px;
+  
 }
 
 a {
