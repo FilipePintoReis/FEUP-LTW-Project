@@ -19,6 +19,7 @@ a {
 
 article.story{
   background-color: rgba(255,255,255,0.5);
+  border: 1px solid Black;
 
 }
 
@@ -30,21 +31,22 @@ article.story > h2 {
 }
 
 article.story > img{
-  background-color: Purple;
-  border-style: solid;
+  //background-color: Orange;
+  border-style: dashed;
   border-top-width: thick;
   border-bottom-width: thick;
-  border-left-width: 20px;
-  border-right-width: 20px;
-  border-color: Green;
+  border-left-width: thick;
+  border-right-width: thick;
+  border-color: Pale Green;
 
   display: block;
   margin: auto;
   padding: auto;
   opacity: 1;
 
-  max-height: 50em;
-  
+  max-height: 30em;
+  border-radius: 5px;
+  box-shadow: -1px -1px 25px Blue;
 }
 
 article.story > p{
@@ -62,20 +64,26 @@ article.story > p{
   top: 0;
   right: 0;
   background-color: #111;
+  color: #111;
   overflow-x: hidden;
   padding-top: 20px;
-  opacity: 0.3;
+  opacity: 0.5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .side_bar:hover{
   width:160px;
   opacity: 0.8;
+  color: Orange;
 }
 
 .side_bar section p{
   font-size: 1.7em;
   text-align: center;
-  color: Orange;
 }
 
 .side_bar section:hover p{
