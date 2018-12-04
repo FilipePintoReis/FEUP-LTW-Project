@@ -81,8 +81,8 @@ article.story > p{
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: #cddde4b8;
-  color: #cddde4b8;
+  background-color: #111;
+  color: #111;
   overflow-x: hidden;
   padding-top: 20px;
   opacity: 0.5;
@@ -118,6 +118,6 @@ article.story > p{
 .side_bar section img{
   width: 100%;
   height: 100%;
-  background-color: LightCyan;
+  background-color: #111;
 }
 
