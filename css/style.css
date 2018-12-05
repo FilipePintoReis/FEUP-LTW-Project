@@ -17,6 +17,7 @@ header{
   text-decoration: none;
   position: sticky;
   top:0;
+  margin-left: 2%;
 
 }
 
@@ -24,10 +25,7 @@ header{
 article.story{
   background-color: rgba(255,255,255,0.5);
   border: 1px solid Black;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  margin-left: 2%;
-  margin-right:2%;
+  margin: 5% 2%;
 }
 
 article.story > h2 {
@@ -107,7 +105,7 @@ article.story section article p{
 
 article.comment{
   border: 1px solid Black;
-  background-color: Blue;
+  background-color: rgba(100,149,237,0.5);
 }
 
 .side_bar{
@@ -135,11 +133,11 @@ article.comment{
 .side_bar:hover{
   width:200px;
   opacity: 0.8;
-  color: Blue;
+  color: White;
 }
 
 .side_bar section p{
-  font-size: 1.7em;
+  font-size: 160%;
   text-align: center;
 }
 
@@ -148,7 +146,6 @@ article.comment{
   transform: translate(1px, 10%);
   border: medium;
   opacity: 0.9;
-  background-color: Black;
 }
 
 .side_bar section img{
@@ -157,6 +154,19 @@ article.comment{
   background-color: #111;
 }
 
-form{
-  border: 10%;
+input[type=submit]{
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid Black;;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+input[type=text]:focus {
+  border: 2px solid Orange;
+}
+
+input[type=text]{
+  margin-left: 1%;
 }
