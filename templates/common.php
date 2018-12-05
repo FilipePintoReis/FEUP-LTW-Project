@@ -12,7 +12,7 @@
 
     <body>
         <header>
-            <h1><a href="index.php">Vote It</a></h1>
+            <h1><a href="index.php">Potatoe</a></h1>
             <?php if($username != NULL) {?>
             <ul>
                 <li><?=$username?></li>
@@ -39,7 +39,7 @@
 
 <?php function draw_footer() { ?>
     <footer>
-        &copy; 2018 VoteIt
+        &copy; 2018 Potatoe
     </footer>
 </body>
 

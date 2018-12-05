@@ -24,7 +24,10 @@ header{
 article.story{
   background-color: rgba(255,255,255,0.5);
   border: 1px solid Black;
-
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 2%;
+  margin-right:2%;
 }
 
 article.story > h2 {
@@ -72,7 +75,40 @@ article.story > p{
   text-align: left;
 }
 
-/***********************************************STORIES******************************************************************/
+article.story section article span.user{
+  font-family: Lucida Sans Unicode;
+  font-size: 80%;
+  font-weight: bold;
+  height: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 3%;
+  text-align: left;
+}
+
+article.story section article span.date{
+  font-family: Lucida Sans Unicode;
+  font-size: 80%;
+  height: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 3%;
+  text-align: left;
+}
+
+article.story section article p{
+  font-family: Lucida Sans Unicode;
+  height: 1%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  margin-left: 3%;
+  text-align: left;
+}
+
+article.comment{
+  border: 1px solid Black;
+  background-color: Blue;
+}
 
 .side_bar{
   height: 100%;
@@ -121,3 +157,6 @@ article.story > p{
   background-color: #111;
 }
 
+form{
+  border: 10%;
+}
