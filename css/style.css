@@ -9,7 +9,7 @@ body {
   background-image: url("../images/backtest.png");
   background-attachment: fixed;
   background-size: 1200px;
-  
+
 }
 
 header{
@@ -27,7 +27,7 @@ header{
 }
 
 header:hover{
-  
+
   transform: translate(0, 26%);
 
 }
@@ -179,7 +179,7 @@ input[type=submit]{
   padding: 12px 20px;
   border: 1px solid Black;;
   border-radius: 20px;
-  cursor: url("../images/pikapika.PNG"), auto;
+  cursor: url("../images/pikapika.png"), auto;
 }
 
 input[type=text]:focus {
