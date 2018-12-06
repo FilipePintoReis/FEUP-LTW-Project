@@ -27,7 +27,7 @@
                     <span class="date">1h ago</span>
                 </article>
                 <form action="action_comment.php" method="post">
-                    <input type="text" name="comment" placeholder="Your thoughts....">
+                    <input type="text" name="comment" placeholder="Thought this was juicy?">
                     <input type="submit" value="Comment">
                 </form>
             </section>
@@ -45,18 +45,18 @@
             <section class="comments">
                 <article class="comment">
                     <span class="user">userName</span>
-                    <span class="date">1m ago</span>
                     <p>First Comment Nam sit amet ante ac mi sagittis scelerisque in quis libero. Phasellus vitae mattis elit. Integer finibus ornare tincidunt.
                         Nullam in dictum nulla, at gravida mauris.
                     </p>
+                    <span class="date">1m ago</span>
                 </article>
                 <article class="comment">
                     <span class="user">userName</span>
-                    <span class="date">1h ago</span>
                     <p>
                         Second Comment amet ante ac mi sagittis scelerisque in quis libero. Phasellus vitae mattis elit. Integer finibus ornare tincidunt.
                         Nullam in dictum nulla, at gravida mauris.
                     </p>
+                    <span class="date">1h ago</span>
                 </article>
                 <form action="action_comment.php" method="post">
                     <input type="text" name="comment" placeholder="Your thoughts....">
@@ -78,18 +78,18 @@
             <section class="comments">
                 <article class="comment">
                     <span class="user">userName</span>
-                    <span class="date">1m ago</span>
                     <p>First Comment Nam sit amet ante ac mi sagittis scelerisque in quis libero. Phasellus vitae mattis elit. Integer finibus ornare tincidunt.
                         Nullam in dictum nulla, at gravida mauris.
                     </p>
+                    <span class="date">1m ago</span>
                 </article>
                 <article class="comment">
                     <span class="user">userName</span>
-                    <span class="date">1h ago</span>
                     <p>
                         Second Comment amet ante ac mi sagittis scelerisque in quis libero. Phasellus vitae mattis elit. Integer finibus ornare tincidunt.
                         Nullam in dictum nulla, at gravida mauris.
                     </p>
+                    <span class="date">1h ago</span>
                 </article>
                 <form action="action_comment.php" method="post">
                     <input type="text" name="comment" placeholder="Your thoughts....">
