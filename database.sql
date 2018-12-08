@@ -24,7 +24,7 @@ CREATE TABLE Story (
 				NOT NULL,
 	title 		TEXT,
 	content 	TEXT,
-	date_posted DATE
+	date_posted DATETIME
 );
 
 DROP TABLE IF EXISTS Comment;
@@ -37,7 +37,7 @@ CREATE TABLE Comment (
 				NOT NULL,
 	id_parent	INTEGER REFERENCES Comment(id_comment),
 	content 	TEXT,
-	datePosted 	DATE
+	datePosted 	DATETIME
 );
 
 DROP TABLE IF EXISTS StoryVote;
