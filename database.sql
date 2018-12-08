@@ -1,4 +1,19 @@
 
+DROP TABLE IF EXISTS User;
+CREATE TABLE User (
+	id_user		INTEGER PRIMARY KEY
+				AUTOINCREMENT,
+	username	TEXT,
+	password 	TEXT
+);
+
+DROP TABLE IF EXISTS Channel;
+CREATE TABLE Channel (
+	id_channel 	INTEGER PRIMARY KEY
+				AUTOINCREMENT,
+	name		TEXT
+);
+
 DROP TABLE IF EXISTS Story;
 CREATE TABLE Story (
 	id_story	INTEGER PRIMARY KEY
@@ -25,21 +40,6 @@ CREATE TABLE Comment (
 	datePosted 	DATE
 );
 
-DROP TABLE IF EXISTS User;
-CREATE TABLE User (
-	id_user		INTEGER PRIMARY KEY
-				AUTOINCREMENT,
-	username	TEXT,
-	password 	TEXT
-);
-
-DROP TABLE IF EXISTS Channel;
-CREATE TABLE Channel (
-	id_channel 	INTEGER PRIMARY KEY
-				AUTOINCREMENT,
-	name		TEXT
-);
-
 DROP TABLE IF EXISTS StoryVote;
 CREATE TABLE StoryVote (
 	id_story	INTEGER REFERENCES Story(id_story)
@@ -61,3 +61,60 @@ CREATE TABLE CommentVote (
 	CHECK 		(value in (-1, 0, 1)),
 	PRIMARY KEY (id_comment, id_user)
 );
+
+
+INSERT INTO User VALUES (NULL, 'Jose', 'password'); -- id_user username password
+INSERT INTO User VALUES (NULL, 'Jose1', 'password1');
+INSERT INTO User VALUES (NULL, 'Jose2', 'password2');
+INSERT INTO User VALUES (NULL, 'Jose3', 'password3');
+INSERT INTO User VALUES (NULL, 'Jose4', 'password4');
+
+INSERT INTO Channel VALUES (NULL, 'When you try your best, but dont succeed'); -- id_comment id_story id_user id_parent content datePosted
+INSERT INTO Channel VALUES (NULL, 'Tech Support');
+INSERT INTO Channel VALUES (NULL, 'Plane Weird');
+INSERT INTO Channel VALUES (NULL, 'Food in hotels');
+INSERT INTO Channel VALUES (NULL, 'Almost died');
+
+--A notação da data está mal é preciso mudar para o que era preciso
+
+INSERT INTO Story VALUES (NULL, 1, 1, 'I almost made it to the bus stop', 'aa', 2015-06-15); --id_story id_user id_channel title content date_posted
+INSERT INTO Story VALUES (NULL, 2, 2, 'story2' , 'aa2', 2015-06-15);
+INSERT INTO Story VALUES (NULL, 3, 3, 'story3' , 'I almost made it, but a kid shoved me and I fell on the water. My phone was so hot that there was smoke on the water.', 2015-06-12);
+
+INSERT INTO Comment VALUES (NULL, 1, 1, NULL,'Jose commented something', 2015-06-15); --id_comment id_story id_user	id_parent content datePosted 
+INSERT INTO Comment VALUES (NULL, 1, 2, NULL, 'Jose1 commented Jose comment', 2015-06-15);
+
+INSERT INTO Comment VALUES (NULL, 2, 2, NULL,'Jose1 said something', 2015-06-15);
+INSERT INTO Comment VALUES (NULL, 2, 3, NULL, 'Jose2 said Jose1 said', 2015-06-15);
+
+INSERT INTO Comment VALUES (NULL, 3, 3, NULL,'Jose2 heard something', 2015-06-15); 
+INSERT INTO Comment VALUES (NULL, 3, 3, NULL, 'Jose2 heard Jose2 hearing', 2015-06-15);
+
+INSERT INTO StoryVote VALUES (1, 1, 1); -- id_story id_user value
+INSERT INTO StoryVote VALUES (1, 2, 1);
+INSERT INTO StoryVote VALUES (1, 3, 1);
+INSERT INTO StoryVote VALUES (2, 1, -1);
+INSERT INTO StoryVote VALUES (2, 2, -1);
+
+INSERT INTO CommentVote VALUES (1, 1, 1); --id_comment id_user value
+INSERT INTO CommentVote VALUES (1, 2, 1);
+INSERT INTO CommentVote VALUES (1, 3, 1);
+INSERT INTO CommentVote VALUES (2, 1, -1); --id_comment id_user value
+INSERT INTO CommentVote VALUES (2, 2, -1);
+INSERT INTO CommentVote VALUES (2, 3, -1);
+
+--Some queries
+-- select * from Story 
+-- ... get all stories
+-- select * from Story, Channel where (Story.id_channel = Channel.id_channel);
+-- ... get all stories that belong to some channel
+-- select * from StoryVote where (StoryVote.id_story == 1);
+-- ...get all StoryVote from Story.id_story == 1
+-- 
+--
+--
+--
+--
+--
+--
+--
