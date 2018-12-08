@@ -110,10 +110,10 @@ INSERT INTO CommentVote VALUES (2, 3, -1);
 -- ... get all stories that belong to some channel
 -- select * from StoryVote where (StoryVote.id_story == 1);
 -- ...get all StoryVote from Story.id_story == 1
--- 
---
---
---
+-- select Story.id_story from Story, StoryVote where (StoryVote.id_story == Story.id_story);
+-- ...gets a id_story for each vote
+-- select Story.id_story, count(Story.id_story) AS a1 from Story, StoryVote where (StoryVote.id_story == Story.id_story) group by Story.id_story order by a1 DESC limit 1;
+-- ... gets most voted story (it's not considering if the votes are yes or no)
 --
 --
 --
