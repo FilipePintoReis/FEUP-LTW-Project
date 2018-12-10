@@ -12,12 +12,6 @@
 <body>
     <header>
         <h1><a href="index.php">Potatoe</a></h1>
-        <?php if($username != NULL) {?>
-        <ul>
-            <li><?=$username?></li>
-            <li><a href="../actions/action_logout.php"></a>Logout</li>
-        </ul>
-        <?php } ?>
     </header>
 
     <aside class="side_bar">
