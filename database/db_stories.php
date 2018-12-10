@@ -7,7 +7,7 @@
     };
     function get_all_comments_from_story($id){
         global $db;
-        
+
 
     }
 
@@ -18,5 +18,5 @@
         return $stmt->fetchAll();
     };
 
-    
+
 ?>
