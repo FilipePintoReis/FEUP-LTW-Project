@@ -9,7 +9,11 @@
         return $stmt->fetchAll();
     };
 
-    function get_all_comments_from_story($id){
+    function get_all_stories_from_id($id_user){
+
+    }
+
+    function get_all_comments_from_story($id_story){
         global $db;
 
 
@@ -17,8 +21,8 @@
 
     function get_all_stories_from_channel($id){
         global $db;
-        $stmt = $dbh->prepare("SELECT * FROM Story, Channel WHERE Story.id_channel = ?");
-        $stmt->execute(array($id));
+        $stmt = $db->prepare('SELECT * FROM Story, Channel WHERE (Story.id_channel = ? AND Channel.id_channel = ?)');
+        $stmt->execute(array($id, $id));
         return $stmt->fetchAll();
     };
 
