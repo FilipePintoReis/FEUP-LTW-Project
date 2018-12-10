@@ -17,8 +17,14 @@
                 </div>
             </div>
             <footer>
-
-                <a class="comments" href="story.php?id=<?=$story['id']?>#comments"></a>
+                <span id="vote">
+                    <form class="vote" action="action_vote_story.php" method="post">
+                        <input type="button" name="Up" value="1">
+                        <input type="button" name="Down" value="-1">
+                    </form>
+                    <span id="vote_points">Vote Points</span>
+                </span>
+                <span id="comment"><a class="comments" href="story.php?id=<?=$story['id']?>#comments">Comment</a></span>
             </footer>
         </article>
     <?php } ?>

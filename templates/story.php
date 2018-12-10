@@ -37,13 +37,12 @@
 
         <article class="story">
             <header>
-                <h1><?=$story['title']?></h1>
+                <h2><?=$story['channel']?></h2>
             </header>
             <footer>
                 
                 <span class="date"><?=date('Y-m-d H:i:s', $story['date_posted']);?></span>
             </footer>
         </article>
-    </section>
-<?php } ?>
-<?php } ?>
+    <?php } ?>
+</section>
