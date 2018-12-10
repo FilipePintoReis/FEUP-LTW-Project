@@ -3,7 +3,9 @@
   include_once('database/db_stories.php');
 
   //$stories = get_all_stories();
-  $stories = get_all_stories_from_channel(1);
+  //$stories = get_all_stories_from_channel(1);
+  $stories = get_all_stories_from_user(3);
+
 
   include('templates/common/header.php');
   include('templates/tpl_list_stories.php');
