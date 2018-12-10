@@ -13,7 +13,7 @@
                 </div>
                 <div class="story_details">
                     <span id="user">Posted by <?=$story['username']?></span>
-                    <span id="date"><?=date('Y-m-d H:i:s', $story['date_posted']);?></span>
+                    <span id="date"><?=date('d-m-Y H:I:s', $story['date_posted']);?></span>
                 </div>
             </div>
             <footer>
