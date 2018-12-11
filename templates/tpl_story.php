@@ -14,6 +14,11 @@
                 <span id="user">Posted by <?=$story['username']?></span>
                 <span id="date"><?=date('Y-m-d H:i:s', $story['date_posted']);?></span>
             </div>
+            <div class="story_text">
+                <?php foreach ($paragraphs as $paragraph) {?>
+                    <p><?= $paragraph ?></p>
+                <<?php } ?>
+            </div>
         </div>
         <footer>
             <span id="vote">

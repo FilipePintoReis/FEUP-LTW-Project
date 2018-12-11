@@ -5,8 +5,9 @@
     if (!isset($_GET['id']))
         die("No id!");
 
-    $story = get_story_by_id($_GET['id']);
-    $paragraphs = explode('\n', $story['content']);
+
+    $story = get_story_from_id($_GET['id']);
+    $paragraphs = $story['content'];
 
     include('templates/common/header.php');
     include('templates/tpl_story.php');
