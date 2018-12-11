@@ -9,6 +9,15 @@
         return $stmt->fetchAll();
     };
 
+    function get_all_channels(){
+        global $db;
+        $stmt = $db->prepare('  SELECT name
+                                FROM Channel;'
+                            );
+        $stmt->execute();
+        return $stmt->fetchAll();
+    };
+
     function get_story_from_id($id_story){
         global $db;
         $stmt = $db->prepare('  SELECT Story.id AS id, name, username, title, content, date_posted
@@ -16,7 +25,7 @@
                                 WHERE ((Story.id = ?) AND (Story.id_channel = Channel.id) AND (Story.id_user == User.id));'
                             );
         $stmt->execute(array($id_story));
-        return $stmt->fetchAll();
+        return $stmt->fetch();
     }
 
     function get_all_stories_from_user($id_user){

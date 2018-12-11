@@ -12,12 +12,32 @@
             </div>
             <div class="story_details">
                 <span id="user">Posted by <?=$story['username']?></span>
-                <span id="date"><?=date('Y-m-d H:i:s', $story['date_posted']);?></span>
+                <span id="date">
+                    <?php   $time = strtotime($story['date_posted']);
+                            $dbDate = new DateTime($story['date_posted']);
+                            $currDate = new DateTime();
+                            $interval = $currDate->diff($dbDate);
+
+                            if($interval->y > 0)
+                                $display_time = $interval->y. " years";
+                            else if($interval->m > 0)
+                                $display_time = $interval->m. " months";
+                            else if($interval->d > 0)
+                                $display_time = $interval->d. " days";
+                            else if($interval->h > 0)
+                                $display_time = $interval->h. " hours";
+                            else if($interval->i > 0)
+                                $display_time = $interval->i. " minutes";
+                            else if($interval->s > 0)
+                                $display_time = $interval->s. " seconds";
+                    ?>
+                    <?= $display_time. " ago" ?>
+                </span>
             </div>
             <div class="story_text">
                 <?php foreach ($paragraphs as $paragraph) {?>
                     <p><?= $paragraph ?></p>
-                <<?php } ?>
+                <?php } ?>
             </div>
         </div>
         <footer>

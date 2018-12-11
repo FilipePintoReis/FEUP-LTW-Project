@@ -19,7 +19,7 @@
             <img src="images/pic1.png" alt="tHe mEmEs">
         </section>
         <section id="create_post">
-            <p>Create a Post</p>
+            <p> <a href="create_story.php"> Create a Story</a></p>
         </section>
         <section id="trending_categories">
             <p>Trending Categories</p>
