@@ -4,7 +4,8 @@ CREATE TABLE User (
 	id			INTEGER PRIMARY KEY
 				AUTOINCREMENT,
 	username	TEXT,
-	password 	TEXT
+	password 	TEXT,
+	bio			TEXT
 );
 
 DROP TABLE IF EXISTS Channel;
@@ -63,11 +64,11 @@ CREATE TABLE CommentVote (
 );
 
 
-INSERT INTO User VALUES (NULL, 'Jose', 'password'); -- id_user username password
-INSERT INTO User VALUES (NULL, 'Jose1', 'password1');
-INSERT INTO User VALUES (NULL, 'Jose2', 'password2');
-INSERT INTO User VALUES (NULL, 'Jose3', 'password3');
-INSERT INTO User VALUES (NULL, 'Jose4', 'password4');
+INSERT INTO User VALUES (NULL, 'Jose', 'password', 'I dread snakes'); -- id_user username password
+INSERT INTO User VALUES (NULL, 'Jose1', 'password1', 'Fudge with bread is life');
+INSERT INTO User VALUES (NULL, 'Jose2', 'password2', 'Love throwing darts');
+INSERT INTO User VALUES (NULL, 'Jose3', 'password3', 'Monkey see monkey do');
+INSERT INTO User VALUES (NULL, 'Jose4', 'password4', 'Pringles');
 
 INSERT INTO Channel VALUES (NULL, 'When you try your best, but dont succeed'); -- id_channel name
 INSERT INTO Channel VALUES (NULL, 'Tech Support');
