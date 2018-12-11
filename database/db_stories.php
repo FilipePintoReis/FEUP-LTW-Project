@@ -69,5 +69,11 @@
         return $stmt->fetchAll();
     };
 
-
+    function insert_story($id_user, $id_channel, $title, $content, $date_posted, $url){
+        global $db;
+        $stmt = $db->prepare('  INSERT INTO Story VALUES (NULL, ?, ?, ?, ?, ?, ?);
+                            ');
+        $stmt->execute(array($id, $id));
+        return $stmt->fetchAll();
+    };
 ?>

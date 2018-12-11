@@ -9,7 +9,7 @@
 
  <section id="create_post">
      <h1>Create Post</h1>
-     <form class="create_post" action="actions/action_create_post.php" method="post">
+     <form class="create_post" action="actions/action_create_post.php" method="post" enctype="multipart/form-data">
          <select class="channel_selector" name="Channel">
              <?php foreach ($channels as $channel) { ?>
                  <option value="<?php $channel ?>"><?php $channel ?></option>
@@ -18,6 +18,7 @@
          <p></p>
          <textarea name="title" rows="1" cols="80" placeholder="Title" required></textarea>
          <textarea name="text" rows="8" cols="80" placeholder="Text optional..."></textarea>
+         <input type="file" name="upfile" id="id_file" accept="image/*">
          <input type="submit" name="submit" value="Submit">
      </form>
  </section>

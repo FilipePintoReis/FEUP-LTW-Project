@@ -17,7 +17,7 @@ CREATE TABLE Channel (
 
 DROP TABLE IF EXISTS Story;
 CREATE TABLE Story (
-	id			INTEGER PRIMARY KEY
+	id			INTEGER PRIMARY KEY 
 				AUTOINCREMENT,
 	id_user		INTEGER REFERENCES User(id)
 				NOT NULL,
@@ -25,7 +25,8 @@ CREATE TABLE Story (
 				NOT NULL,
 	title 		TEXT,
 	content 	TEXT,
-	date_posted DATETIME
+	date_posted DATETIME,
+	url			VARCHAR
 );
 
 DROP TABLE IF EXISTS Comment;
@@ -78,9 +79,9 @@ INSERT INTO Channel VALUES (NULL, 'Almost died');
 
 --A notação da data está mal é preciso mudar para o que era preciso
 
-INSERT INTO Story VALUES (NULL, 1, 1, 'I almost made it to the bus stop', 'aa', '2015-06-15 00:00:00'); --id_story id_user id_channel title content date_posted
-INSERT INTO Story VALUES (NULL, 2, 2, 'story2' , 'aa2', '2015-06-15 00:00:00');
-INSERT INTO Story VALUES (NULL, 3, 3, 'story3' , 'I almost made it, but a kid shoved me and I fell on the water. My phone was so hot that there was smoke on the water.', 2015-06-12);
+INSERT INTO Story VALUES (NULL, 1, 1, 'I almost made it to the bus stop', 'aa', '2015-06-15 00:00:00', 'hey.png'); --id_story id_user id_channel title content date_posted
+INSERT INTO Story VALUES (NULL, 2, 2, 'story2' , 'aa2', '2015-06-15 00:00:00', 'hey.png');
+INSERT INTO Story VALUES (NULL, 3, 3, 'story3' , 'I almost made it, but a kid shoved me and I fell on the water. My phone was so hot that there was smoke on the water.', '2015-06-15 00:00:00', 'hey.png');
 
 INSERT INTO Comment VALUES (NULL, 1, 1, NULL,'Jose commented something', '2015-06-15 00:00:00'); --id_comment id_story id_user	id_parent content datePosted
 INSERT INTO Comment VALUES (NULL, 1, 2, NULL, 'Jose1 commented Jose comment', '2015-06-15 00:00:00');
