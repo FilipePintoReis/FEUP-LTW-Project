@@ -32,7 +32,7 @@
         global $db;
         $stmt = $db->prepare('  SELECT *
                                 FROM Story, User, Channel
-                                WHERE ((Story.id_user = User.id) AND (User.id_user = ?) AND (Story.id_channel = Channel.id));
+                                WHERE ((Story.id_user = User.id) AND (User.id = ?) AND (Story.id_channel = Channel.id));
                             ');
         $stmt->execute(array($id_user));
         return $stmt->fetchAll();
