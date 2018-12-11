@@ -1,7 +1,7 @@
 <section id="story_content">
     <article>
         <header>
-            <h2><?=$story['channel_name']?></h2>
+            <h2><?=$story['name']?></h2>
         </header>
         <div class="story_content">
             <div class="story_image">

@@ -1,7 +1,7 @@
 <?php
     function get_all_stories(){
         global $db;
-        $stmt = $db->prepare('SELECT name as channel_name, username, title, content, date_posted
+        $stmt = $db->prepare('SELECT name, username, title, content, date_posted
                                 FROM Story, Channel, User
                                 WHERE ((Story.id_channel = Channel.id_channel) AND (Story.id_user == User.id_user));'
                             );
