@@ -1,7 +1,7 @@
 
 DROP TABLE IF EXISTS User;
 CREATE TABLE User (
-	id_user		INTEGER PRIMARY KEY
+	id			INTEGER PRIMARY KEY
 				AUTOINCREMENT,
 	username	TEXT,
 	password 	TEXT
@@ -9,18 +9,18 @@ CREATE TABLE User (
 
 DROP TABLE IF EXISTS Channel;
 CREATE TABLE Channel (
-	id_channel 	INTEGER PRIMARY KEY
-				AUTOINCREMENT,
-	name		TEXT
+	id	 	INTEGER PRIMARY KEY
+			AUTOINCREMENT,
+	name	TEXT
 );
 
 DROP TABLE IF EXISTS Story;
 CREATE TABLE Story (
-	id_story	INTEGER PRIMARY KEY
+	id			INTEGER PRIMARY KEY
 				AUTOINCREMENT,
-	id_user		INTEGER REFERENCES User(id_user)
+	id_user		INTEGER REFERENCES User(id)
 				NOT NULL,
-	id_channel 	INTEGER REFERENCES Channel(id_channel)
+	id_channel 	INTEGER REFERENCES Channel(id)
 				NOT NULL,
 	title 		TEXT,
 	content 	TEXT,
@@ -29,22 +29,22 @@ CREATE TABLE Story (
 
 DROP TABLE IF EXISTS Comment;
 CREATE TABLE Comment (
-	id_comment  INTEGER PRIMARY KEY
+	id			INTEGER PRIMARY KEY
 				AUTOINCREMENT,
-	id_story	INTEGER REFERENCES Story(id_story)
+	id_story	INTEGER REFERENCES Story(id)
 				NOT NULL,
-	id_user		INTEGER REFERENCES User(id_user)
+	id_user		INTEGER REFERENCES User(id)
 				NOT NULL,
-	id_parent	INTEGER REFERENCES Comment(id_comment),
+	id_parent	INTEGER REFERENCES Comment(id),
 	content 	TEXT,
 	datePosted 	DATETIME
 );
 
 DROP TABLE IF EXISTS StoryVote;
 CREATE TABLE StoryVote (
-	id_story	INTEGER REFERENCES Story(id_story)
+	id_story	INTEGER REFERENCES Story(id)
 				NOT NULL,
-	id_user		INTEGER REFERENCES User(id_user)
+	id_user		INTEGER REFERENCES User(id)
 				NOT NULL,
 	value		INTEGER,
 	CHECK 		(value in (-1, 0, 1)),
@@ -53,9 +53,9 @@ CREATE TABLE StoryVote (
 
 DROP TABLE IF EXISTS CommentVote;
 CREATE TABLE CommentVote (
-	id_comment	INTEGER REFERENCES Comment(id_comment)
+	id_comment	INTEGER REFERENCES Comment(id)
 				NOT NULL,
-	id_user	INTEGER REFERENCES User(id_user)
+	id_user	INTEGER REFERENCES User(id)
 				NOT NULL,
 	value		INTEGER,
 	CHECK 		(value in (-1, 0, 1)),
@@ -81,13 +81,13 @@ INSERT INTO Story VALUES (NULL, 1, 1, 'I almost made it to the bus stop', 'aa', 
 INSERT INTO Story VALUES (NULL, 2, 2, 'story2' , 'aa2', '2015-06-15 00:00:00');
 INSERT INTO Story VALUES (NULL, 3, 3, 'story3' , 'I almost made it, but a kid shoved me and I fell on the water. My phone was so hot that there was smoke on the water.', 2015-06-12);
 
-INSERT INTO Comment VALUES (NULL, 1, 1, NULL,'Jose commented something', '2015-06-15 00:00:00'); --id_comment id_story id_user	id_parent content datePosted 
+INSERT INTO Comment VALUES (NULL, 1, 1, NULL,'Jose commented something', '2015-06-15 00:00:00'); --id_comment id_story id_user	id_parent content datePosted
 INSERT INTO Comment VALUES (NULL, 1, 2, NULL, 'Jose1 commented Jose comment', '2015-06-15 00:00:00');
 
 INSERT INTO Comment VALUES (NULL, 2, 2, NULL,'Jose1 said something', '2015-06-15 00:00:00');
 INSERT INTO Comment VALUES (NULL, 2, 3, NULL, 'Jose2 said Jose1 said', '2015-06-15 00:00:00');
 
-INSERT INTO Comment VALUES (NULL, 3, 3, NULL,'Jose2 heard something', '2015-06-15 00:00:00'); 
+INSERT INTO Comment VALUES (NULL, 3, 3, NULL,'Jose2 heard something', '2015-06-15 00:00:00');
 INSERT INTO Comment VALUES (NULL, 3, 3, NULL, 'Jose2 heard Jose2 hearing', '2015-06-15 00:00:00');
 
 INSERT INTO StoryVote VALUES (1, 1, 1); -- id_story id_user value
@@ -104,7 +104,7 @@ INSERT INTO CommentVote VALUES (2, 2, -1);
 INSERT INTO CommentVote VALUES (2, 3, -1);
 
 --Some queries
--- select * from Story 
+-- select * from Story
 -- ... get all stories
 -- select * from Story, Channel where (Story.id_channel = Channel.id_channel);
 -- ... get all stories that belong to some channel
