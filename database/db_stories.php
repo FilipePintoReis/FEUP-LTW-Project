@@ -73,7 +73,7 @@
         global $db;
         $stmt = $db->prepare('  INSERT INTO Story VALUES (NULL, ?, ?, ?, ?, ?, ?);
                             ');
-        $stmt->execute(array($id, $id));
+        $stmt->execute(array($id_user, $id_channel, $title, $content, $date_posted, $url));
         return $stmt->fetchAll();
     };
 ?>
