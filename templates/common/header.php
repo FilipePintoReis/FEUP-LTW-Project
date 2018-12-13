@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>
+    <header class = "head">
         <h1><a href="index.php">Potatoe</a></h1>
     </header>
 

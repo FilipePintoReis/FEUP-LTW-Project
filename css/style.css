@@ -12,7 +12,7 @@ body {
 
 }
 
-header{
+header.head{
   position: sticky;
   top: -50px;
   max-width: 25%;
@@ -26,7 +26,7 @@ header{
   transition: all 0.5s cubic-bezier(.12,.08,.27,1.33);
 }
 
-header:hover{
+header.head:hover{
 
   transform: translate(0, 26%);
 

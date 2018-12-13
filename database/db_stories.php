@@ -32,7 +32,7 @@
         global $db;
         $stmt = $db->prepare('  SELECT *
                                 FROM Story, User, Channel
-                                WHERE ((Story.id_user = User.id) AND (User.id_user = ?) AND (Story.id_channel = Channel.id));
+                                WHERE ((Story.id_user = User.id) AND (User.id = ?) AND (Story.id_channel = Channel.id));
                             ');
         $stmt->execute(array($id_user));
         return $stmt->fetchAll();
@@ -69,5 +69,11 @@
         return $stmt->fetchAll();
     };
 
-
+    function insert_story($id_user, $id_channel, $title, $content, $date_posted, $url){
+        global $db;
+        $stmt = $db->prepare('  INSERT INTO Story VALUES (NULL, ?, ?, ?, ?, ?, ?);
+                            ');
+        $stmt->execute(array($id_user, $id_channel, $title, $content, $date_posted, $url));
+        return $stmt->fetchAll();
+    };
 ?>

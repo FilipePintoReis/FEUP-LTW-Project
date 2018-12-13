@@ -4,7 +4,9 @@ CREATE TABLE User (
 	id			INTEGER PRIMARY KEY
 				AUTOINCREMENT,
 	username	TEXT,
-	password 	TEXT
+	password 	TEXT,
+	bio			TEXT,
+	url 		VARCHAR
 );
 
 DROP TABLE IF EXISTS Channel;
@@ -16,7 +18,7 @@ CREATE TABLE Channel (
 
 DROP TABLE IF EXISTS Story;
 CREATE TABLE Story (
-	id			INTEGER PRIMARY KEY
+	id			INTEGER PRIMARY KEY 
 				AUTOINCREMENT,
 	id_user		INTEGER REFERENCES User(id)
 				NOT NULL,
@@ -24,7 +26,8 @@ CREATE TABLE Story (
 				NOT NULL,
 	title 		TEXT,
 	content 	TEXT,
-	date_posted DATETIME
+	date_posted DATETIME,
+	url			VARCHAR
 );
 
 DROP TABLE IF EXISTS Comment;
@@ -63,11 +66,11 @@ CREATE TABLE CommentVote (
 );
 
 
-INSERT INTO User VALUES (NULL, 'Jose', 'password'); -- id_user username password
-INSERT INTO User VALUES (NULL, 'Jose1', 'password1');
-INSERT INTO User VALUES (NULL, 'Jose2', 'password2');
-INSERT INTO User VALUES (NULL, 'Jose3', 'password3');
-INSERT INTO User VALUES (NULL, 'Jose4', 'password4');
+INSERT INTO User VALUES (NULL, 'Jose', 'password', 'I dread snakes', '../avatar_images/avatar.jpg'); -- id_user username password bio url
+INSERT INTO User VALUES (NULL, 'Jose1', 'password1', 'Fudge with bread is life', '../avatar_images/avatar.jpg');
+INSERT INTO User VALUES (NULL, 'Jose2', 'password2', 'Love throwing darts', '../avatar_images/avatar.jpg');
+INSERT INTO User VALUES (NULL, 'Jose3', 'password3', 'Monkey see monkey do', '../avatar_images/avatar.jpg');
+INSERT INTO User VALUES (NULL, 'Jose4', 'password4', 'Pringles', '../avatar_images/avatar.jpg');
 
 INSERT INTO Channel VALUES (NULL, 'When you try your best, but dont succeed'); -- id_channel name
 INSERT INTO Channel VALUES (NULL, 'Tech Support');
@@ -77,9 +80,9 @@ INSERT INTO Channel VALUES (NULL, 'Almost died');
 
 --A notação da data está mal é preciso mudar para o que era preciso
 
-INSERT INTO Story VALUES (NULL, 1, 1, 'I almost made it to the bus stop', 'aa', '2015-06-15 00:00:00'); --id_story id_user id_channel title content date_posted
-INSERT INTO Story VALUES (NULL, 2, 2, 'story2' , 'aa2', '2015-06-15 00:00:00');
-INSERT INTO Story VALUES (NULL, 3, 3, 'story3' , 'I almost made it, but a kid shoved me and I fell on the water. My phone was so hot that there was smoke on the water.', 2015-06-12);
+INSERT INTO Story VALUES (NULL, 1, 1, 'I almost made it to the bus stop', 'aa', '2015-06-15 00:00:00', '../post_images/avatar.jpg'); --id_story id_user id_channel title content date_posted
+INSERT INTO Story VALUES (NULL, 2, 2, 'story2' , 'aa2', '2015-06-15 00:00:00', '../post_images/avatar.jpg');
+INSERT INTO Story VALUES (NULL, 3, 3, 'story3' , 'I almost made it, but a kid shoved me and I fell on the water. My phone was so hot that there was smoke on the water.', '2015-06-15 00:00:00', '../post_images/avatar.jpg');
 
 INSERT INTO Comment VALUES (NULL, 1, 1, NULL,'Jose commented something', '2015-06-15 00:00:00'); --id_comment id_story id_user	id_parent content datePosted
 INSERT INTO Comment VALUES (NULL, 1, 2, NULL, 'Jose1 commented Jose comment', '2015-06-15 00:00:00');
