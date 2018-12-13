@@ -1,6 +1,9 @@
 <?php
+
+    include_once('./includes/database.php');
+
     function get_all_stories(){
-        global $db;
+        $db = Database::instance()->db();
         $stmt = $db->prepare('  SELECT Story.id AS id, name, username, title, date_posted
                                 FROM Story, Channel, User
                                 WHERE ((Story.id_channel = Channel.id) AND (Story.id_user == User.id));'
@@ -10,7 +13,7 @@
     };
 
     function get_all_channels(){
-        global $db;
+        $db = Database::instance()->db();
         $stmt = $db->prepare('  SELECT name
                                 FROM Channel;'
                             );
@@ -19,7 +22,7 @@
     };
 
     function get_story_from_id($id_story){
-        global $db;
+        $db = Database::instance()->db();
         $stmt = $db->prepare('  SELECT Story.id AS id, name, username, title, content, date_posted
                                 FROM Story, User, Channel
                                 WHERE ((Story.id = ?) AND (Story.id_channel = Channel.id) AND (Story.id_user == User.id));'
@@ -29,7 +32,7 @@
     }
 
     function get_all_stories_from_user($id_user){
-        global $db;
+        $db = Database::instance()->db();
         $stmt = $db->prepare('  SELECT *
                                 FROM Story, User, Channel
                                 WHERE ((Story.id_user = User.id) AND (User.id = ?) AND (Story.id_channel = Channel.id));
@@ -39,7 +42,7 @@
     }
 
     function get_all_comments_from_story($id_story){
-        global $db;
+        $db = Database::instance()->db();
         $stmt = $db->prepare('  SELECT *
                                 FROM Story, Comment, User
                                 WHERE ((Story.id = ?) AND (Story.id = Comment.id_story) AND (Comment.id_parent != NULL))'
@@ -49,7 +52,7 @@
     }
 
     function get_all_comments_from_comment($id_story, $id_comment){
-        global $db;
+        $db = Database::instance()->db();
         $stmt = $db->prepare('  SELECT *
                                 FROM Story, Comment, User
                                 WHERE ((Story.id = ?) AND (Story.id = Comment.id_story) AND (Comment.id_parent = ?))'
@@ -60,7 +63,7 @@
 
 
     function get_all_stories_from_channel($id){
-        global $db;
+        $db = Database::instance()->db();
         $stmt = $db->prepare('  SELECT *
                                 FROM Story, Channel, User
                                 WHERE ((Story.id_channel = ?) AND (Channel.id = ?) AND (Story.id_user = User.id));
@@ -70,7 +73,7 @@
     };
 
     function insert_story($id_user, $id_channel, $title, $content, $date_posted, $url){
-        global $db;
+        $db = Database::instance()->db();
         $stmt = $db->prepare('  INSERT INTO Story VALUES (NULL, ?, ?, ?, ?, ?, ?);
                             ');
         $stmt->execute(array($id_user, $id_channel, $title, $content, $date_posted, $url));
