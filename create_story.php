@@ -12,7 +12,7 @@
      <form class="create_post" action="actions/action_create_post.php" method="post" enctype="multipart/form-data">
          <select class="channel_selector" name="Channel">
              <?php foreach ($channels as $channel) { ?>
-                 <option value="<?php $channel ?>"><?php $channel ?></option>
+                 <option value="<?=$channel['name']?>"><?=$channel['name']?></option>
              <?php } ?>
          </select>
          <p></p>

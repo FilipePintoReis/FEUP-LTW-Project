@@ -1,6 +1,6 @@
 <?php
 
-    include_once('./includes/database.php');
+    include_once(dirname(__DIR__) . '/includes/database.php');
 
     function get_all_stories(){
         $db = Database::instance()->db();
@@ -79,4 +79,14 @@
         $stmt->execute(array($id_user, $id_channel, $title, $content, $date_posted, $url));
         return $stmt->fetchAll();
     };
+
+    function get_story_vote($id_story, $id_user) {
+        global $db;
+        $stmt = $db->prepare('  SELECT value
+                                FROM StoryVote
+                                WHERE ((id_story = ?) AND (id_user = ?));
+                            ');
+        $stmt->execute(array($id_story, $id_user));
+        return $stmt->fetchAll();
+    }
 ?>

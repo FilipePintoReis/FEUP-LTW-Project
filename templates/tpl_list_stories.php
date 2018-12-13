@@ -38,10 +38,8 @@
             </div>
             <footer>
                 <span id="vote">
-                    <form class="vote" action="action_vote_story.php" method="post">
-                        <input type="button" name="Up" value="1">
-                        <input type="button" name="Down" value="-1">
-                    </form>
+                    <button type="submit" name="upvote" formaction="action_vote_story.php?id_story=<?=$story['id']?>" formmethod="post"><i class="fas fa-caret-square-up"></i></button>
+                    <button type="submit" name="upvote" formaction="action_vote_story.php?id_story=<?=$story['id']?>id_user=1value=-1" formmethod="post"><i class="fas fa-caret-square-down"></i></button>
                     <span id="vote_points">Vote Points</span>
                 </span>
                 <span id="comment"><a class="comments" href="story.php?id=<?=$story['id']?>#comments">Comment</a></span>
