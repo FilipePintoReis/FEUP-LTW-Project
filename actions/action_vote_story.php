@@ -10,7 +10,7 @@
     }
 
     $new_vote_type = $_GET['type'];
-    $id_story = $id_story;
+    $id_story = $_GET['id_story'];
     $id_user = get_id_user_with_username($_SESSION['username']);
     $has_voted = get_story_vote($id_story, $id_user['id']);
 
