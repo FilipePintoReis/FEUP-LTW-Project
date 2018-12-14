@@ -1,8 +1,8 @@
 <section id="stories">
     <?php foreach($stories as $story) { ?>
         <article>
-            <header>
-                <h2><?=$story['name']?></h2>
+            <header class="channel">
+                <h2><?=$story['name']?></h2> 
             </header>
             <div class="story_content">
                 <div class="story_title">
@@ -36,7 +36,7 @@
                     </span>
                 </div>
             </div>
-            <footer>
+            <footer class="story_footer">
                 <span id="vote">
                     <button type="submit" name="upvote" formaction="action_vote_story.php?id_story=<?=$story['id']?>" formmethod="post"><i class="fas fa-caret-square-up"></i></button>
                     <button type="submit" name="upvote" formaction="action_vote_story.php?id_story=<?=$story['id']?>id_user=1value=-1" formmethod="post"><i class="fas fa-caret-square-down"></i></button>

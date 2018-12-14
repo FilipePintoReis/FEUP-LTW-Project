@@ -6,7 +6,7 @@ body {
   max-width: 80em;
   margin: auto;
 
-  background-image: url("../images/backtest.png");
+  background-image: url("../images/background.png");
   background-attachment: fixed;
   background-size: 1200px;
 
@@ -21,7 +21,7 @@ header.head{
   margin-top: 4%;
   border: 1px solid White;
   text-align: center;
-  background-image: url("../images/backghe.png");
+  background-image: url("../images/titlebg.png");
   background-size: 9.5%;
   transition: all 0.5s cubic-bezier(.12,.08,.27,1.33);
 }
@@ -38,20 +38,39 @@ header a{
 }
 
 /***********************************************STORIES******************************************************************/
-article.story{
+article{
   background-color: rgba(255,255,255,0.5);
   border: 1px solid Black;
   margin: 5% 2%;
 }
 
-article.story > h2 {
+
+
+article header.channel{
+  
+  font-size: 70%;
+  text-align: right;
+  margin-right: 2%;
+}
+
+.story_title{
   font-style: italic;
   height: 1%;
   margin: 1%;
-  text-align: center;
 }
 
-article.story > img{
+.story_image{
+  
+}
+
+.story_details{
+  }
+
+.story_footer{
+  
+}
+
+/*article.story > img{
   border-style: dashed;
   border-top-width: thick;
   border-bottom-width: thick;
@@ -68,7 +87,7 @@ article.story > img{
 
   border-radius: 5px;
   box-shadow: -1px -1px 25px Blue;
-}
+}*/
 
 @media only screen and (min-width: 768px){
   article.story > img{
@@ -143,8 +162,6 @@ article.comment{
 
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  flex-shrink: 1;
   justify-content: space-around;
   align-items: center;
 }
@@ -160,12 +177,22 @@ article.comment{
   text-align: center;
 }
 
+.side_bar section p a{
+  text-decoration: none;
+}
+
+a:visited{
+  color:inherit;
+}
+
 .side_bar section:hover p{
   text-decoration: underline;
   transform: translate(1px, 10%);
   border: medium;
   opacity: 0.9;
+  color: White;
 }
+
 
 .side_bar section img{
   width: 100%;

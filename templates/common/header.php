@@ -24,7 +24,7 @@
 
     <aside class="side_bar">
         <section>
-            <img src="images/pic1.png" alt="tHe mEmEs">
+            <img src="../images/pic1.png" alt="tHe mEmEs">
         </section>
         <section id="create_post">
             <p> <a href="create_story.php"> Create a Story</a></p>
