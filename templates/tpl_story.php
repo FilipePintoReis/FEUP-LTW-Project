@@ -56,6 +56,7 @@
 <section id="story_comments">
     <?php foreach ($comments_result as $comment) {?>
         <p><?= $comment['content'] ?></p>
+        <p>by <?= $comment['username'] ?></p>
     <?php } ?>
 
 
