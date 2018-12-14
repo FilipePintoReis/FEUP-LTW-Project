@@ -14,11 +14,11 @@
     <header class = "head">
         <h1><a href="../index.php">Potatoe</a></h1>
 
-        <?php echo isset($_SESSION['username']); if(!isset($_SESSION['username'])){ ?>
+        <?php if(!isset($_SESSION['username'])){ ?>
             <h3> <a href="pages/login.php">Login</a> </h3>
             <h3> <a href="pages/signup.php">Sign Up</a> </h3>
         <?php  } else { ?>
-            <h3> <a class="button" href="actions/action_logout.php">Logout</a> </h3>
+            <h3> <a class="button" href="./actions/action_logout.php">Logout</a> </h3>
         <?php }?>
     </header>
 

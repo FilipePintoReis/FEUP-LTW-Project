@@ -1,6 +1,8 @@
 <?php
     include_once('../abs_path.php');
     include_once(ABSPATH . '/database/db_stories.php');
+    include_once(ABSPATH . '/includes/session.php');
+
 
     $channels = get_all_channels();
 
