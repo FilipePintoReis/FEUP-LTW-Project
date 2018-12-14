@@ -43,10 +43,11 @@
 
     function get_all_comments_from_story($id_story){
         $db = Database::instance()->db();
-        $stmt = $db->prepare('  SELECT *
-                                FROM Story, Comment, User
-                                WHERE ((Story.id = ?) AND (Story.id = Comment.id_story) AND (Comment.id_parent != NULL))'
-                            );
+        $stmt = $db->prepare('  SELECT * from Story, Comment, User 
+                                WHERE((Story.id = ?) 
+                                AND (Story.id = Comment.id_story) 
+                                AND (Comment.id_parent IS NULL ) 
+                                AND (Comment.id_user = User.id))');
         $stmt->execute(array($id_story));
         return $stmt->fetchAll();
     }

@@ -8,6 +8,9 @@
 
     $story = get_story_from_id($_GET['id']);
     $paragraphs = explode('\n', $story['content']);
+    $comments_result = get_all_comments_from_story($_GET['id']);
+    
+    
 
     include(ABSPATH . '/templates/common/header.php');
     include(ABSPATH . '/templates/tpl_story.php');

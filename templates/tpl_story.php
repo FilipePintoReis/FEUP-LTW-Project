@@ -50,8 +50,14 @@
             </span>
             <span id="comment"><a class="comments" href="story.php?id=<?=$story['id']?>#comments">Comment</a></span>
         </footer>
+        
     </article>
 </section>
 <section id="story_comments">
+    <?php foreach ($comments_result as $comment) {?>
+        <p><?= $comment['content'] ?></p>
+        <p>by <?= $comment['username'] ?></p>
+    <?php } ?>
+
 
 </section>
