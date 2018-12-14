@@ -3,6 +3,7 @@
     include_once(ABSPATH . '/database/db_stories.php');
     include_once(ABSPATH . '/includes/session.php');
 
+    $_SESSION['curr_file'] = basename($_SERVER['PHP_SELF']);
     $stories = get_all_stories();
     //$stories = get_all_stories_from_channel(1);
     //$stories = get_all_stories_from_user(3);

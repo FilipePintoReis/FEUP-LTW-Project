@@ -43,10 +43,10 @@
 
     function get_all_comments_from_story($id_story){
         $db = Database::instance()->db();
-        $stmt = $db->prepare('  SELECT * from Story, Comment, User 
-                                WHERE((Story.id = ?) 
-                                AND (Story.id = Comment.id_story) 
-                                AND (Comment.id_parent IS NULL ) 
+        $stmt = $db->prepare('  SELECT * from Story, Comment, User
+                                WHERE((Story.id = ?)
+                                AND (Story.id = Comment.id_story)
+                                AND (Comment.id_parent IS NULL )
                                 AND (Comment.id_user = User.id))');
         $stmt->execute(array($id_story));
         return $stmt->fetchAll();
@@ -75,19 +75,69 @@
 
     function insert_story($id_user, $id_channel, $title, $content, $date_posted, $url){
         $db = Database::instance()->db();
-        $stmt = $db->prepare('  INSERT INTO Story VALUES (NULL, ?, ?, ?, ?, ?, ?);
+        $stmt = $db->prepare('INSERT INTO Story VALUES (NULL, ?, ?, ?, ?, ?, ?);
                             ');
         $stmt->execute(array($id_user, $id_channel, $title, $content, $date_posted, $url));
         return $stmt->fetchAll();
     };
 
-    function get_story_vote($id_story, $id_user) {
-        global $db;
-        $stmt = $db->prepare('  SELECT value
-                                FROM StoryVote
-                                WHERE ((id_story = ?) AND (id_user = ?));
-                            ');
+    /* *****   STORY VOTES   ***** */
+
+    function add_story_vote($id_story, $id_user, $value) {
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('INSERT INTO StoryVote VALUES (?, ?, ?);');
+        $stmt->execute(array($id_story, $id_user, $value));
+        return $stmt->fetchAll();
+    }
+
+    function update_story_vote($id_story, $id_user, $value) {
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('UPDATE StoryVote SET value = ? WHERE ((id_story = ?) AND (id_user = ?));');
+        $stmt->execute(array($value, $id_story, $id_user));
+        return $stmt->fetchAll();
+    }
+
+    function delete_story_vote($id_story, $id_user) {
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('DELETE FROM StoryVote WHERE ((id_story = ?) AND (id_user = ?));');
         $stmt->execute(array($id_story, $id_user));
         return $stmt->fetchAll();
+    }
+
+    function get_story_vote($id_story, $id_user) {
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('SELECT value FROM StoryVote WHERE ((id_story = ?) AND (id_user = ?));');
+        $stmt->execute(array($id_story, $id_user));
+        return $stmt->fetch();
+    }
+
+    /* *****   COMMENT VOTES   ***** */
+
+    function add_comment_vote($id_comment, $id_user, $value) {
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('INSERT INTO CommentVote VALUES (?, ?, ?);');
+        $stmt->execute(array($id_comment, $id_user, $value));
+        return $stmt->fetchAll();
+    }
+
+    function update_comment_vote($id_comment, $id_user, $value) {
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('UPDATE CommentVote SET value = ? WHERE ((id_comment = ?) AND (id_user = ?));');
+        $stmt->execute(array($value, $id_comment, $id_user));
+        return $stmt->fetchAll();
+    }
+
+    function delete_comment_vote($id_comment, $id_user) {
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('DELETE FROM CommentVote WHERE ((id_comment = ?) AND (id_user = ?));');
+        $stmt->execute(array($id_comment, $id_user));
+        return $stmt->fetchAll();
+    }
+
+    function get_comment_vote($id_comment, $id_user) {
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('SELECT value FROM CommentVote WHERE ((id_comment = ?) AND (id_user = ?));');
+        $stmt->execute(array($id_comment, $id_user));
+        return $stmt->fetch();
     }
 ?>

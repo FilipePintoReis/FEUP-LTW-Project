@@ -23,6 +23,13 @@
           return ($stmt->fetch() !== false);
       }
 
+      function get_id_user_with_username($username) {
+          $db = Database::instance()->db();
+          $stmt = $db->prepare('SELECT id FROM User WHERE username = ?');
+          $stmt->execute(array($username));
+          return $stmt->fetch();
+      }
+
       function add_user($username, $password, $email) {
           $db = Database::instance()->db();
           $stmt = $db->prepare('INSERT INTO USER VALUES (NULL, ?, ?, ?, NULL, NULL);');
