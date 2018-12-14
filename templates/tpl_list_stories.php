@@ -45,8 +45,9 @@
                     <span id="vote_points">
                         Vote Points 
                         <?php $upvotes = get_story_upvotes($story['id']); ?>
-                        <!-- <?php var_dump($upvotes); ?> -->
                         <?=$upvotes["counter"]?>
+                        <?php $downvotes = get_story_downvotes($story['id']); ?>
+                        <?=$downvotes["counter"]?>
                     </span>
                 </span>
                 <span id="comment"><a class="comments" href="story.php?id=<?=$story['id']?>#comments">Comment</a></span>

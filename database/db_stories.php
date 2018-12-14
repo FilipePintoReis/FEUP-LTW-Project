@@ -118,6 +118,13 @@
         return $stmt->fetch();
     }
 
+    function get_story_downvotes($id_story) {
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('SELECT count(*) as counter FROM StoryVote WHERE (id_story = ? AND value = -1);');
+        $stmt->execute(array($id_story));
+        return $stmt->fetch();
+    }
+
     /* *****   COMMENT VOTES   ***** */
 
     function add_comment_vote($id_comment, $id_user, $value) {
