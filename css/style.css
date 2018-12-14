@@ -101,15 +101,15 @@ article header.channel{
   }
 }
 
-article.story > p{
-  font-family: Lucida Sans Unicode;
+.story_text{
+  font-family: 'Roboto', sans-serif;
   height: 1%;
   margin: 1%;
   text-align: left;
 }
 
 article.story section article span.user{
-  font-family: Lucida Sans Unicode;
+  font-family: Roboto;
   font-size: 80%;
   font-weight: bold;
   height: 1%;
@@ -120,7 +120,7 @@ article.story section article span.user{
 }
 
 article.story section article span.date{
-  font-family: Lucida Sans Unicode;
+  font-family: Roboto;
   font-size: 80%;
   font-style: italic;
   height: 1%;
@@ -131,7 +131,7 @@ article.story section article span.date{
 }
 
 article.comment p{
-  font-family: Lucida Sans Unicode;
+  font-family: Roboto;
   font-size: 90%;
   height: 1%;
   margin: 0 5%;
