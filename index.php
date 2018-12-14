@@ -1,3 +1,3 @@
 <?php
-    include("list_stories.php");
+    include('pages/list_stories.php');
  ?>

@@ -1,13 +1,13 @@
 <?php
-
-    include_once(dirname(__DIR__) . '/includes/database.php');
+    include_once('../abs_path.php');
+    include_once(ABSPATH . '/includes/database.php');
 
     function validate_login($username, $password) {
         $db = Database::instance()->db();
-        $stmt = $db->prepare('SELECT * FROM User WHERE username = ?');
-        $stmt->execute(array($username));
+        $stmt = $db->prepare('SELECT * FROM User WHERE username = ? AND password = ?');
+        $stmt->execute(array($username, $password));
         $user = $stmt->fetch();
-        return $user !== false && password_verify($password, $user['password']);
+        return $user !== false;
       }
 
 ?>

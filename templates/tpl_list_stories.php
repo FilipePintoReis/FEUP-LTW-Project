@@ -6,7 +6,7 @@
             </header>
             <div class="story_content">
                 <div class="story_title">
-                    <h1><a href="story.php?id=<?=$story['id']?>"><?=$story['title']?></a></h1>
+                    <h1><a href="../pages/story.php?id=<?=$story['id']?>"><?=$story['title']?></a></h1>
                 </div>
                 <div class="story_image">
                     <h2>Image</h2>
