@@ -1,18 +1,24 @@
 <?php
-    include_once('database/connection.php');
-    include_once('database/db_stories.php');
+    include_once('../abs_path.php');
+    include_once(ABSPATH . '/database/db_stories.php');
+    include_once(ABSPATH . '/includes/session.php');
+
 
     $channels = get_all_channels();
 
-    include('templates/common/header.php');
+    include(ABSPATH . '/templates/common/header.php');
+
+    $action_create_post = ABSPATH . '/actions/action_create_post.php';
+    $image = ABSPATH . '/images/*';
+
  ?>
 
  <section id="create_post">
      <h1>Create Post</h1>
-     <form class="create_post" action="actions/action_create_post.php" method="post" enctype="multipart/form-data">
+     <form class="create_post" action=<?=$action_create_post?> method="post" enctype="multipart/form-data">
          <select class="channel_selector" name="Channel">
              <?php foreach ($channels as $channel) { ?>
-                 <option value="<?php $channel ?>"><?php $channel ?></option>
+                 <option value="<?=$channel['name']?>"><?=$channel['name']?></option>
              <?php } ?>
          </select>
          <p></p>
@@ -23,4 +29,4 @@
      </form>
  </section>
 
-<?php     include('templates/common/footer.php'); ?>
+<?php     include(ABSPATH . '/templates/common/footer.php'); ?>

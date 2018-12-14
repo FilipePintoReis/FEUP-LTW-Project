@@ -3,7 +3,7 @@
 
         <article class="story">
             <h2>First Story Title</h2>
-            <img src="images/story_image.jpeg" alt="tHe mEmEs">
+            <img src="../images/story_image.jpeg" alt="tHe mEmEs">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus felis nec felis posuere dignissim in euismod orci.
                 Sed id est eu lacus pulvinar tempor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.

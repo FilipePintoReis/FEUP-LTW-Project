@@ -1,3 +1,4 @@
 <?php
-    include("list_stories.php");
+    include_once('./includes/session.php');
+    include('pages/list_stories.php');
  ?>
