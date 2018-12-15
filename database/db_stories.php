@@ -6,7 +6,8 @@
         $db = Database::instance()->db();
         $stmt = $db->prepare('  SELECT Story.id AS id, name, username, title, date_posted
                                 FROM Story, Channel, User
-                                WHERE ((Story.id_channel = Channel.id) AND (Story.id_user == User.id));'
+                                WHERE ((Story.id_channel = Channel.id) AND (Story.id_user == User.id))
+                                ORDER BY Story.date_posted DESC;'
                             );
         $stmt->execute();
         return $stmt->fetchAll();
