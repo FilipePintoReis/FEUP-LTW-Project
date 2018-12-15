@@ -114,14 +114,14 @@
 
     function get_story_upvotes($id_story) {
         $db = Database::instance()->db();
-        $stmt = $db->prepare('SELECT count(*) as counter FROM StoryVote WHERE (id_story = ? AND value = 1);');
+        $stmt = $db->prepare('SELECT n_upvotes FROM Story WHERE id = ?;');
         $stmt->execute(array($id_story));
         return $stmt->fetch();
     }
 
     function get_story_downvotes($id_story) {
         $db = Database::instance()->db();
-        $stmt = $db->prepare('SELECT count(*) as counter FROM StoryVote WHERE (id_story = ? AND value = -1);');
+        $stmt = $db->prepare('SELECT n_downvotes FROM Story WHERE id = ?;');
         $stmt->execute(array($id_story));
         return $stmt->fetch();
     }

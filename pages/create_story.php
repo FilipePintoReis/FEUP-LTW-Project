@@ -8,14 +8,12 @@
 
     include(ABSPATH . '/templates/common/header.php');
 
-    $action_create_post = ABSPATH . '/actions/action_create_post.php';
-    $image = ABSPATH . '/images/*';
 
  ?>
 
  <section id="create_post">
      <h1>Create Post</h1>
-     <form class="create_post" action=<?=$action_create_post?> method="post" enctype="multipart/form-data">
+     <form class="create_post" action='../actions/action_create_post.php' method="post" enctype="multipart/form-data">
          <select class="channel_selector" name="Channel">
              <?php foreach ($channels as $channel) { ?>
                  <option value="<?=$channel['name']?>"><?=$channel['name']?></option>
