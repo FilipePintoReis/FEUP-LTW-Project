@@ -81,12 +81,12 @@ INSERT INTO Channel VALUES (NULL, 'Almost died');
 
 --A notação da data está mal é preciso mudar para o que era preciso
 
-INSERT INTO Story VALUES (NULL, 1, 1, 'I almost made it to the bus stop', 'aa', '2015-06-15 00:00:00', '../post_images/avatar.jpg'); --id_story id_user id_channel title content date_posted
+INSERT INTO Story VALUES (NULL, 1, 1, 'I almost made it to the bus stop', 'aa', '2018-12-14 00:00:00', '../post_images/avatar.jpg'); --id_story id_user id_channel title content date_posted
 INSERT INTO Story VALUES (NULL, 2, 2, 'story2' , 'aa2', '2015-06-15 00:00:00', '../post_images/avatar.jpg');
 INSERT INTO Story VALUES (NULL, 3, 3, 'story3' , 'I almost made it, but a kid shoved me and I fell on the water. My phone was so hot that there was smoke on the water.', '2015-06-15 00:00:00', '../post_images/avatar.jpg');
 
-INSERT INTO Comment VALUES (NULL, 1, 1, NULL,'Jose commented something', '2015-06-15 00:00:00'); --id_comment id_story id_user	id_parent content datePosted
-INSERT INTO Comment VALUES (NULL, 1, 2, NULL, 'Jose1 commented Jose comment', '2015-06-15 00:00:00');
+INSERT INTO Comment VALUES (NULL, 1, 1, NULL,'Jose commented something', '2018-12-14 00:00:00'); --id_comment id_story id_user	id_parent content datePosted
+INSERT INTO Comment VALUES (NULL, 1, 2, NULL, 'Jose1 commented Jose comment', '2018-12-14 00:00:00');
 
 INSERT INTO Comment VALUES (NULL, 2, 2, NULL,'Jose1 said something', '2015-06-15 00:00:00');
 INSERT INTO Comment VALUES (NULL, 2, 3, NULL, 'Jose2 said Jose1 said', '2015-06-15 00:00:00');
