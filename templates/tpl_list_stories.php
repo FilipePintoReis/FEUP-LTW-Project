@@ -2,7 +2,7 @@
     <?php foreach($stories as $story) { ?>
         <article>
             <header class="channel">
-                <h2><?=$story['name']?></h2> 
+                <h2><?=$story['name']?></h2>
             </header>
             <div class="story_content">
                 <div class="story_title">
@@ -45,17 +45,10 @@
                     </form>
 
                     <span id="vote_points">
-                        Vote Points 
-                    </span>
-
-                    <span id="upvotes">
-                        <?php $upvotes = get_story_upvotes($story['id']); ?>
-                        <?=$upvotes["counter"]?>
-                    </span>
-
-                    <span id="downvotes">
-                        <?php $downvotes = get_story_downvotes($story['id']); ?>
-                        <?=$downvotes["counter"]?>
+                        <?php   $upvotes = get_story_upvotes($story['id']);
+                                $downvotes = get_story_downvotes($story['id']); ?>
+                        <?=intval($upvotes['n_upvotes']) -  intval($downvotes['n_downvotes'])?>
+                        Vote Points
                     </span>
 
                 </span>
