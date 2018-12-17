@@ -88,7 +88,7 @@
         $db = Database::instance()->db();
         $stmt = $db->prepare('INSERT INTO StoryVote VALUES (?, ?, ?);');
         $stmt->execute(array($id_story, $id_user, $value));
-        return $stmt->fetchAll();
+        return true;
     }
 
     function update_story_vote($id_story, $id_user, $value) {
@@ -107,7 +107,7 @@
 
     function get_story_vote($id_story, $id_user) {
         $db = Database::instance()->db();
-        $stmt = $db->prepare('SELECT value FROM StoryVote WHERE ((id_story = ?) AND (id_user = ?));');
+        $stmt = $db->prepare('SELECT * FROM StoryVote WHERE ((id_story = ?) AND (id_user = ?));');
         $stmt->execute(array($id_story, $id_user));
         return $stmt->fetch();
     }

@@ -27,7 +27,15 @@
     }
 
     if($old_vote_type == 'none') {
-        add_story_vote($id_story, $id_user['id'], $has_voted['value']);
+        switch($new_vote_type) {
+            case 'up':
+                $new_vote = 1;
+                break;
+            case 'down':
+                $new_vote = -1;
+                break;
+        }
+        add_story_vote($id_story, $id_user['id'], $new_vote);
     }
     else if($new_vote_type == $old_vote_type) {
         delete_story_vote($id_story, $id_user['id']);
