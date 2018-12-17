@@ -4,9 +4,14 @@
     include_once(ABSPATH . '/includes/session.php');
 
     $_SESSION['curr_file'] = basename($_SERVER['PHP_SELF']);
+
+    /*     ---> When user is logged in, present only channels he is subbed to?
+    if(!isset($_SESSION['username'])
+        $stories = get_all_stories();
+    else {
+    } */
+
     $stories = get_all_stories();
-    //$stories = get_all_stories_from_channel(1);
-    //$stories = get_all_stories_from_user(3);
 
     include(ABSPATH . '/templates/common/header.php');
     include(ABSPATH . '/templates/tpl_list_stories.php');

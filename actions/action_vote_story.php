@@ -6,7 +6,7 @@
 
     if(!isset($_SESSION['username'])) {
         $_SESSION['error_messages'][] = 'You need to be logged in to vote!';
-        header('Location: ../pages' . '/' . $_SESSION['curr_file']);
+        die(header('Location: ../pages/login.php'));
     }
 
     $new_vote_type = $_GET['type'];

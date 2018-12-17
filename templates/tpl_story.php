@@ -46,7 +46,7 @@
                     <button type="submit" name="upvote" formaction="../actions/action_vote_story.php?id_story=<?=$story['id']?>&type=up" formmethod="post"><i class="fas fa-caret-square-up"></i></button>
                     <button type="submit" name="downvote" formaction="../actions/action_vote_story.php?id_story=<?=$story['id']?>&type=down" formmethod="post"><i class="fas fa-caret-square-down"></i></button>
                 </form>
-                
+
                     <span id="vote_points">
                         Vote Points
                     </span>
@@ -56,8 +56,6 @@
                          $downvotes = get_story_downvotes($story['id']); ?>
                          <?=intval($upvotes['n_upvotes']) -  intval($downvotes['n_downvotes'])?>
                     </span>
-                    
-                
             </span>
             <span id="comment"><a class="comments" href="story.php?id=<?=$story['id']?>#comments">Comment</a></span>
         </footer>

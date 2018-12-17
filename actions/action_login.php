@@ -10,7 +10,8 @@
     if(validate_login($username, $password)) {
         set_current_user($username);
         $_SESSION['success_messages'][] = "*Login Successful*";
-        $referer = '../index.php';
+        $referer = '../pages/' . $_SESSION['curr_file'];
+;
       } else {
         $_SESSION['error_messages'][] = "*Login Failed*";
         $referer = '../pages/login.php';

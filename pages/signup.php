@@ -3,7 +3,7 @@
     include_once(ABSPATH . '/includes/session.php');
 
     if (isset($_SESSION['username'])) {
-        header('Location: ' . ABSPATH. '/index.php');
+        die(header('Location: ../pages/' . $_SESSION['curr_file']));
     }
 
     include(ABSPATH . '/templates/common/header.php');
@@ -16,6 +16,10 @@
                 <div class="form_parameter">
                     <label for="username">Username</label>
                     <input type="text" name="username" placeholder="username" required>
+                </div>
+                <div class="form_parameter">
+                    <label for="fullname">FullName</label>
+                    <input type="text" name="fullname" placeholder="fullname" required>
                 </div>
                 <div class="form_parameter">
                     <label for="email">Email</label>

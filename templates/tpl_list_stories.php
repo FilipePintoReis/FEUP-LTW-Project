@@ -2,7 +2,7 @@
     <?php foreach($stories as $story) { ?>
         <article>
             <header class="channel">
-                <h2><?=$story['name']?></h2> 
+                <h2><?=$story['name']?></h2>
             </header>
             <div class="story_content">
                 <div class="story_title">
@@ -38,24 +38,21 @@
             </div>
             <footer class="story_footer">
                 <span id="vote">
-
                     <form class="voting_buttons" method="post">
                         <button type="submit" name="upvote" formaction="../actions/action_vote_story.php?id_story=<?=$story['id']?>&type=up" formmethod="post"><i class="fas fa-caret-square-up"></i></button>
                         <button type="submit" name="downvote" formaction="../actions/action_vote_story.php?id_story=<?=$story['id']?>&type=down" formmethod="post"><i class="fas fa-caret-square-down"></i></button>
                     </form>
 
-                    <span id="vote_points">
-                        Vote Points 
-                    </span>
+                        <span id="vote_points">
+                            Vote Points
+                        </span>
 
-                    <span id="vote_pointsNumber">
-                    <?php   $upvotes = get_story_upvotes($story['id']);
-                        $downvotes = get_story_downvotes($story['id']); ?>
-                        <?=intval($upvotes['n_upvotes']) -  intval($downvotes['n_downvotes'])?>
-                
+                        <span id="vote_pointsNumber">
+                            <?php   $upvotes = get_story_upvotes($story['id']);
+                             $downvotes = get_story_downvotes($story['id']); ?>
+                             <?=intval($upvotes['n_upvotes']) -  intval($downvotes['n_downvotes'])?>
+                        </span>
                     </span>
-
-                </span>
                 <span id="comment"><a class="comments" href="story.php?id=<?=$story['id']?>#comments">Comment</a></span>
             </footer>
         </article>
