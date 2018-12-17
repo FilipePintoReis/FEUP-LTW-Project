@@ -32,7 +32,7 @@
     else if($new_vote_type == $old_vote_type) {
         delete_story_vote($id_story, $id_user['id']);
     }
-    else if($new_vote_type == 'up'){
+    if($new_vote_type == 'up'){
         update_story_vote($id_story, $id_user['id'], 1);
     }
     else if($new_vote_type == 'down'){

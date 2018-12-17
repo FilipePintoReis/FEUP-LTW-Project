@@ -50,8 +50,10 @@ CREATE TABLE Comment (
 
 DROP TABLE IF EXISTS StoryVote;
 CREATE TABLE StoryVote (
-	id_story	INTEGER REFERENCES Story(id),
-	id_user		INTEGER REFERENCES User(id),
+	id_story	INTEGER REFERENCES Story(id)
+				NOT NULL,
+	id_user		INTEGER REFERENCES User(id)
+				NOT NULL,
 	value		INTEGER,
 	CHECK 		(value in (-1, 0, 1)),
 	PRIMARY KEY (id_story, id_user)
@@ -80,8 +82,8 @@ CREATE TRIGGER IF NOT EXISTS Update_StoryVote_AfterDelete
 AFTER DELETE ON StoryVote
 FOR EACH ROW
 BEGIN
-	UPDATE Story SET n_upvotes = (SELECT count(*) FROM Story, StoryVote WHERE (StoryVote.value = 1 AND Story.id = new.id_story AND StoryVote.id_story = Story.id)) WHERE Story.id = new.id_story;
-	UPDATE Story SET n_downvotes = (SELECT count(*) FROM Story, StoryVote WHERE (StoryVote.value = -1 AND Story.id = new.id_story AND StoryVote.id_story = Story.id)) WHERE Story.id = new.id_story;
+	UPDATE Story SET n_upvotes = (SELECT count(*) FROM Story, StoryVote WHERE (StoryVote.value = 1 AND Story.id = old.id_story AND StoryVote.id_story = Story.id)) WHERE Story.id = old.id_story;
+	UPDATE Story SET n_downvotes = (SELECT count(*) FROM Story, StoryVote WHERE (StoryVote.value = -1 AND Story.id = old.id_story AND StoryVote.id_story = Story.id)) WHERE Story.id = old.id_story;
 END;
 
 CREATE TRIGGER IF NOT EXISTS Update_StoryVote_AfterUpdate
@@ -104,6 +106,8 @@ INSERT INTO Channel VALUES (NULL, 'Tech Support');
 INSERT INTO Channel VALUES (NULL, 'Plane Weird');
 INSERT INTO Channel VALUES (NULL, 'Food in hotels');
 INSERT INTO Channel VALUES (NULL, 'Almost died');
+
+--A notação da data está mal é preciso mudar para o que era preciso
 
 INSERT INTO Story VALUES (NULL, 1, 1, 'I almost made it to the bus stop', 'aa', '2015-06-15 00:00:00', '../post_images/avatar.jpg', 3, 0); --id_story id_user id_channel title content date_posted
 INSERT INTO Story VALUES (NULL, 2, 2, 'story2' , 'aa2', '2016-06-15 00:00:00', '../post_images/avatar.jpg', 0, 3);
