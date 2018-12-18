@@ -233,3 +233,7 @@ input[type=text]:focus {
 input[type=text]{
   margin-left: 1%;
 }
+
+#story_comments ul, ul#story_comments {
+  list-style: none;
+}

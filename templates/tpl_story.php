@@ -65,32 +65,45 @@
 
     </article>
 </section>
-<section id="story_comments">
+<ul id="story_comments">
     <?php foreach ($comments_result as $comment) {?>
-        <p><?= $comment['content'] ?></p>
-        <p>by <?= $comment['username'] ?></p>
+        <li>
+            <p><?= htmlspecialchars($comment['content']) ?></p>
+            <p>by <?= $comment['username'] ?></p>
+            <?php $comment_list = get_all_comments_from_comment($comment['id']);  
+             // var_dump($comment_list);
+             // var_dump($comment['id']);
+             ?>
+        </li>
+        
 
-        <?php recursive_comment($comment, 0); ?>
+
+        <?php 
+            if($comment_list != false){
+                recursive_comment($comment, 0);
+            } ?>
     <?php } ?>
-</section>
+</ul>
 
 <?php
 
 function recursive_comment($comment, $counter){ 
 
     $comment_list = get_all_comments_from_comment($comment['id']);
-    var_dump($comment_list);
+    // echo $comment_list;
 
     ?>
-    <section>
+    <ul>
         <?php foreach ($comment_list as $son) {?>
+            <li>
             <p><?= $son['content'] ?></p>
             <p>by <?= $son['username'] ?></p>
             <?php 
-            if(count($comment_list > 0))
+            if($comment_list != false)
                 recursive_comment($son, $counter + 1); ?>
+            </li>
     <?php } ?>
-    </section> 
+    </ul> 
     
     
 
