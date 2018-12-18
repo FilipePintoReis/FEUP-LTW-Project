@@ -3,41 +3,46 @@
     include_once(ABSPATH . '/includes/session.php');
     include_once(ABSPATH . '/database/db_stories.php');
     include_once(ABSPATH . '/database/db_user.php');
+    header('Content-Type: application/json');
 
+  
+
+    
     if(!isset($_SESSION['username'])) {
         $_SESSION['error_messages'][] = 'You need to be logged in to vote!';
         header('Location: ../pages' . '/' . $_SESSION['curr_file']);
     }
+   
+   
+    $vote_type = $_POST['value'];
+    $id_story = $_POST['id_story'];
 
-    $new_vote_type = $_GET['type'];
-    $id_story = $_GET['id_story'];
+    
     $id_user = get_id_user_with_username($_SESSION['username']);
-    $has_voted = get_story_vote($id_story, $id_user['id']);
+    $story_vote = get_story_vote($id_story, $id_user['id']);
 
-    switch($has_voted['value']) {
-        case '1':
-            $old_vote_type = 'up';
-            break;
-        case '-1':
-            $old_vote_type = 'down';
-            break;
-        default:
-            $old_vote_type = 'none';
-            break;
-    }
+    $var = 0;
 
-    if($old_vote_type == 'none') {
-        add_story_vote($id_story, $id_user['id'], $has_voted['value']);
+    if($story_vote == false || $story_vote == null) {
+          $var = 1;
+        add_story_vote($id_story, $id_user['id'], $vote_type);
     }
-    else if($new_vote_type == $old_vote_type) {
+    else if($story_vote['value'] == $vote_type) {
+         $var = 2;
         delete_story_vote($id_story, $id_user['id']);
     }
-    if($new_vote_type == 'up'){
-        update_story_vote($id_story, $id_user['id'], 1);
+    else{
+         $var = 3;
+        update_story_vote($id_story, $id_user['id'], $vote_type);
     }
-    else if($new_vote_type == 'down'){
-        update_story_vote($id_story, $id_user['id'], -1);
-    }
+  
 
-    header('Location: /pages' . '/' . $_SESSION['curr_file']);
+
+
+    $vote_points = get_story_upvotes($id_story)['n_upvotes'] - get_story_downvotes($id_story)['n_downvotes'];
+    
+    //header('Location: /pages' . '/' . $_SESSION['curr_file']);
+    echo json_encode( array(
+        'votes' => $vote_points
+    ));
  ?>

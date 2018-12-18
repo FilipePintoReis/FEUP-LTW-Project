@@ -1,9 +1,10 @@
 <section id="stories">
     <?php foreach($stories as $story) { ?>
-        <article>
+        <article id=<?=$story['username']?>>
             <header class="channel">
                 <h2><?=$story['name']?></h2> 
             </header>
+            <script src="../js/main.js" defer></script>
             <div class="story_content">
                 <div class="story_title">
                     <h1><a href="../pages/story.php?id=<?=$story['id']?>"><?=$story['title']?></a></h1>
@@ -38,17 +39,16 @@
             </div>
             <footer class="story_footer">
                 <span id="vote">
-
-                    <form class="voting_buttons" method="post">
-                        <button type="submit" name="upvote" formaction="../actions/action_vote_story.php?id_story=<?=$story['id']?>&type=up" formmethod="post"><i class="fas fa-caret-square-up"></i></button>
-                        <button type="submit" name="downvote" formaction="../actions/action_vote_story.php?id_story=<?=$story['id']?>&type=down" formmethod="post"><i class="fas fa-caret-square-down"></i></button>
-                    </form>
+                    <div class="voting_buttons" >
+                        <button type="submit" name="upvote" onclick="vote(<?=$story['id']?>, 1)" ><i class="fas fa-caret-square-up"></i></button>
+                        <button type="submit" name="downvote" onclick="vote(<?=$story['id']?>, -1)" ><i class="fas fa-caret-square-down"></i></button>
+                    </div>
 
                     <span id="vote_points">
                         Vote Points 
                     </span>
 
-                    <span id="vote_pointsNumber">
+                    <span class="vote_pointsNumber">
                     <?php   $upvotes = get_story_upvotes($story['id']);
                         $downvotes = get_story_downvotes($story['id']); ?>
                         <?=intval($upvotes['n_upvotes']) -  intval($downvotes['n_downvotes'])?>
