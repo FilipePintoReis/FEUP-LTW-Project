@@ -43,21 +43,21 @@
         </div>
         <footer>
             <span id="vote">
+
                 <div class="voting_buttons" method="post">
                     <button type="submit" name="upvote" onclick="vote(<?=$story['id']?>, 1)" ><i class="fas fa-caret-square-up"></i></button>
                      <button type="submit" name="downvote" onclick="vote(<?=$story['id']?>, -1)" ><i class="fas fa-caret-square-down"></i></button>
                 </div>
                 
-                    <span id="vote_points">
-                        Vote Points
-                    </span>
+                <span id="vote_points">
+                    Vote Points
+                </span>
 
-                    <span class="vote_points_number">
-                        <?php   $upvotes = get_story_upvotes($story['id']);
-                         $downvotes = get_story_downvotes($story['id']); ?>
-                         <?=intval($upvotes['n_upvotes']) -  intval($downvotes['n_downvotes'])?>
-                    </span>
-                    
+                <span class="vote_points_number">
+                    <?php   $upvotes = get_story_upvotes($story['id']);
+                     $downvotes = get_story_downvotes($story['id']); ?>
+                     <?=intval($upvotes['n_upvotes']) -  intval($downvotes['n_downvotes'])?>
+                </span>
                 
             </span>
             <span id="comment"><a class="comments" href="story.php?id=<?=$story['id']?>#comments">Comment</a></span>

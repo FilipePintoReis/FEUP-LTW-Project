@@ -3,8 +3,9 @@ DROP TABLE IF EXISTS User;
 CREATE TABLE User (
 	id			INTEGER PRIMARY KEY
 				AUTOINCREMENT,
-	username	TEXT,
+	username	TEXT UNIQUE,
 	password 	TEXT,
+	fullname	TEXT,
 	email 		TEXT,
 	bio			TEXT,
 	url 		VARCHAR
@@ -95,11 +96,11 @@ BEGIN
 END;
 
 
-INSERT INTO User VALUES (NULL, 'Jose', 'password', 'jose@manel.com', 'I dread snakes', '../avatar_images/avatar.jpg'); -- id_user username password bio url
-INSERT INTO User VALUES (NULL, 'Jose1', 'password1', 'jose1@manel.com', 'Fudge with bread is life', '../avatar_images/avatar.jpg');
-INSERT INTO User VALUES (NULL, 'Jose2', 'password2', 'jose2@manel.com', 'Love throwing darts', '../avatar_images/avatar.jpg');
-INSERT INTO User VALUES (NULL, 'Jose3', 'password3', 'jose3@manel.com', 'Monkey see monkey do', '../avatar_images/avatar.jpg');
-INSERT INTO User VALUES (NULL, 'Jose4', 'password4', 'jose4@manel.com', 'Pringles', '../avatar_images/avatar.jpg');
+INSERT INTO User VALUES (NULL, 'Jose', 'password', 'Jose Manel', 'jose@manel.com', 'I dread snakes', '../avatar_images/avatar.jpg'); -- id_user username password bio url
+INSERT INTO User VALUES (NULL, 'Jose1', 'password1', 'Jose1 Manel', 'jose1@manel.com', 'Fudge with bread is life', '../avatar_images/avatar.jpg');
+INSERT INTO User VALUES (NULL, 'Jose2', 'password2', 'Jose2 Manel', 'jose2@manel.com', 'Love throwing darts', '../avatar_images/avatar.jpg');
+INSERT INTO User VALUES (NULL, 'Jose3', 'password3', 'Jose3 Manel', 'jose3@manel.com', 'Monkey see monkey do', '../avatar_images/avatar.jpg');
+INSERT INTO User VALUES (NULL, 'Jose4', 'password4', 'Jose4 Manel', 'jose4@manel.com', 'Pringles', '../avatar_images/avatar.jpg');
 
 INSERT INTO Channel VALUES (NULL, 'When you try your best, but dont succeed'); -- id_channel name
 INSERT INTO Channel VALUES (NULL, 'Tech Support');

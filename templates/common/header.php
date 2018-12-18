@@ -12,14 +12,24 @@
 
 <body>
     <header class = "head">
-        <h1><a href="../index.php">Potatoe</a></h1>
-
-        <?php if(!isset($_SESSION['username'])){ ?>
-            <h3> <a href="./login.php">Login</a> </h3>
-            <h3> <a href="./signup.php">Sign Up</a> </h3>
-        <?php  } else { ?>
-            <h3> <a class="button" href="../actions/action_logout.php">Logout</a> </h3>
-        <?php }?>
+        <div class="homepage_link">
+            <h1><a href="../index.php">Potatoe</a></h1>
+        </div>
+        <div class="search_bar">
+            <form class="search" action="../actions/action_search.php" method="post">
+                <textarea name="input" rows="1" cols="36"></textarea>
+                <input type="submit" name="search" value="search">
+            </form>
+        </div>
+        <div class="profile">
+            <?php if(!isset($_SESSION['username'])){ ?>
+                <h3> <a href="./login.php">Login</a> </h3>
+                <h3> <a href="./signup.php">Sign Up</a> </h3>
+            <?php  } else { ?>
+                <h3> <a class="button" href="../pages/profile.php">Profile</a> </h3>
+                <h3> <a class="button" href="../actions/action_logout.php">Logout</a> </h3>
+            <?php }?>
+        </div>
     </header>
 
     <aside class="side_bar">

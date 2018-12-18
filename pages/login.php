@@ -3,7 +3,7 @@
     include_once(ABSPATH . '/includes/session.php');
 
     if(isset($_SESSION['username'])){
-        header('Location: ../index.php');
+        die(header('Location: ../pages/' . $_SESSION['curr_file']));
     }
 
     include(ABSPATH . '/templates/common/header.php');

@@ -10,7 +10,7 @@
     
     if(!isset($_SESSION['username'])) {
         $_SESSION['error_messages'][] = 'You need to be logged in to vote!';
-        header('Location: ../pages' . '/' . $_SESSION['curr_file']);
+        die(header('Location: ../pages/login.php'));
     }
    
    
@@ -26,6 +26,7 @@
     if($story_vote == false || $story_vote == null) {
           $var = 1;
         add_story_vote($id_story, $id_user['id'], $vote_type);
+
     }
     else if($story_vote['value'] == $vote_type) {
          $var = 2;

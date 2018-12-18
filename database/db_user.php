@@ -30,10 +30,35 @@
           return $stmt->fetch();
       }
 
-      function add_user($username, $password, $email) {
+      function get_user_from_username($username) {
           $db = Database::instance()->db();
-          $stmt = $db->prepare('INSERT INTO USER VALUES (NULL, ?, ?, ?, NULL, NULL);');
-          $stmt->execute(array($username, $password, $email));
-          return $stmt->fetchAll();
+          $stmt = $db->prepare('SELECT * FROM User WHERE username = ?');
+          $stmt->execute(array($username));
+          return $stmt->fetch();
+      }
+
+      function add_user($username, $password, $fullname, $email) {
+          $db = Database::instance()->db();
+          $stmt = $db->prepare('INSERT INTO USER VALUES (NULL, ?, ?, ?, ?, NULL, NULL);');
+          $stmt->execute(array($username, $password, $fullname, $email));
+      }
+
+      function update_user($id, $username, $fullname, $email, $bio) {
+          $db = Database::instance()->db();
+          $stmt = $db->prepare('UPDATE User SET username = ?, fullname = ?, email = ?, bio = ? WHERE id = ?;');
+          $stmt->execute(array($username, $fullname, $email, $bio, $id));
+      }
+
+      function update_password($id, $password) {
+          $db = Database::instance()->db();
+          $stmt = $db->prepare('UPDATE User SET password = ? WHERE id = ?;');
+          $stmt->execute(array($password, $id));
+      }
+
+      function get_number_stories_posted($id_user) {
+          $db = Database::instance()->db();
+          $stmt = $db->prepare('SELECT count(*) as counter FROM Story WHERE id_user = ?');
+          $stmt->execute(array($id_user));
+          return $stmt->fetch();
       }
 ?>

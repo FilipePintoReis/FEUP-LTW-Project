@@ -2,7 +2,7 @@
     <?php foreach($stories as $story) { ?>
         <article id=<?=$story['id']?>>
             <header class="channel">
-                <h2><?=$story['name']?></h2> 
+                <h2><?=$story['name']?></h2>
             </header>
             <script src="../js/main.js" defer></script>
             <div class="story_content">
@@ -39,23 +39,22 @@
             </div>
             <footer class="story_footer">
                 <span id="vote">
+
                     <div class="voting_buttons" >
                         <button type="submit" name="upvote" onclick="vote(<?=$story['id']?>, 1)" ><i class="fas fa-caret-square-up"></i></button>
                         <button type="submit" name="downvote" onclick="vote(<?=$story['id']?>, -1)" ><i class="fas fa-caret-square-down"></i></button>
                     </div>
 
                     <span id="vote_points">
-                        Vote Points 
+                        Vote Points
                     </span>
 
                     <span class="vote_points_number">
-                    <?php   $upvotes = get_story_upvotes($story['id']);
+                        <?php   $upvotes = get_story_upvotes($story['id']);
                         $downvotes = get_story_downvotes($story['id']); ?>
                         <?=intval($upvotes['n_upvotes']) -  intval($downvotes['n_downvotes'])?>
-                
                     </span>
-
-                </span>
+                    
                 <span id="comment"><a class="comments" href="story.php?id=<?=$story['id']?>#comments">Comment</a></span>
             </footer>
         </article>
