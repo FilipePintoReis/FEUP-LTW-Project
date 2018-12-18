@@ -41,7 +41,18 @@
           $db = Database::instance()->db();
           $stmt = $db->prepare('INSERT INTO USER VALUES (NULL, ?, ?, ?, ?, NULL, NULL);');
           $stmt->execute(array($username, $password, $fullname, $email));
-          return $stmt->fetchAll();
+      }
+
+      function update_user($id, $username, $fullname, $email, $bio) {
+          $db = Database::instance()->db();
+          $stmt = $db->prepare('UPDATE User SET username = ?, fullname = ?, email = ?, bio = ? WHERE id = ?;');
+          $stmt->execute(array($username, $fullname, $email, $bio, $id));
+      }
+
+      function update_password($id, $password) {
+          $db = Database::instance()->db();
+          $stmt = $db->prepare('UPDATE User SET password = ? WHERE id = ?;');
+          $stmt->execute(array($password, $id));
       }
 
       function get_number_stories_posted($id_user) {

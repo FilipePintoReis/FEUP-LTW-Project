@@ -26,7 +26,7 @@
                     <input type="email" name="email" placeholder="chips@potato.eat" required>
                 </div>
                 <div class="form_parameter">
-                    <label for="pasword">Password</label>
+                    <label for="password">Password</label>
                     <input type="password" name="password" placeholder="Don't make it easy" required>
                 </div>
                 <div class="form_parameter">

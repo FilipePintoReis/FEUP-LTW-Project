@@ -11,17 +11,20 @@
  ?>
 
 <section class=profile_info>
-    <img src="../../avatar_images/avatar.jpg" alt="Literaly Avatar">
-    <ul class="social_data">
-        <li class="username">
+    <img src=<?=$user['url']?> alt="Literaly Avatar">
+        <div class="username">
             <h1><?=$user['username']?></h1>
-        </li>
-        <li class="num_stories_posted">
+            <a class="edit_profile_button" href="../pages/edit_profile.php">
+                <button class="button" type="button">Edit Profile</button>
+            </a>
+        </div>
+    <div class="social_data">
+        <div class="num_stories_posted">
             <span class="text">
                 <span class="number"><?=$n_stories_posted['counter']?></span> stories posted
             </span>
-        </li>
-    </ul>
+        </div>
+    </div>
     <div class="description">
         <h1><?=$user['fullname']?></h1>
         <br>
