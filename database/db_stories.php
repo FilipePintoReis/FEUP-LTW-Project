@@ -48,7 +48,8 @@
                                 WHERE((Story.id = ?)
                                 AND (Story.id = Comment.id_story)
                                 AND (Comment.id_parent IS NULL )
-                                AND (Comment.id_user = User.id))');
+                                AND (Comment.id_user = User.id))
+                                ORDER BY Comment.id_parent, Comment.datePosted');
         $stmt->execute(array($id_story));
         return $stmt->fetchAll();
     }

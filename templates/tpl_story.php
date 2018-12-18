@@ -69,7 +69,31 @@
     <?php foreach ($comments_result as $comment) {?>
         <p><?= $comment['content'] ?></p>
         <p>by <?= $comment['username'] ?></p>
+
+        <?php recursive_comment($comment, 0); ?>
     <?php } ?>
-
-
 </section>
+
+<?php
+
+function recursive_comment($comment, $counter){ 
+
+    $comment_list = get_all_comments_from_comment($comment['id']);
+    var_dump($comment_list);
+
+    ?>
+    <section>
+        <?php foreach ($comment_list as $son) {?>
+            <p><?= $son['content'] ?></p>
+            <p>by <?= $son['username'] ?></p>
+            <?php 
+            if(count($comment_list > 0))
+                recursive_comment($son, $counter + 1); ?>
+    <?php } ?>
+    </section> 
+    
+    
+
+<?php
+}
+?>
