@@ -4,9 +4,9 @@ req.onreadystatechange = function() {
   
    if(req.readyState === 4 && req.status === 200) {
     var response = JSON.parse(this.responseText);
-    console.log(response)
-    console.log(document);
-    var element = document.getElementsByClassName('vote_pointsNumber'); 
+    var element = document.getElementById(response.id_story).getElementsByClassName('vote_points_number'); 
+    //console.log(element.item(0).innerHTML);
+    //console.log(element.innerHTML);
     element.item(0).innerHTML = response.votes
   }
 }

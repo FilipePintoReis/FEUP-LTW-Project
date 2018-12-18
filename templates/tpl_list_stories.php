@@ -1,6 +1,6 @@
 <section id="stories">
     <?php foreach($stories as $story) { ?>
-        <article id=<?=$story['username']?>>
+        <article id=<?=$story['id']?>>
             <header class="channel">
                 <h2><?=$story['name']?></h2> 
             </header>
@@ -48,7 +48,7 @@
                         Vote Points 
                     </span>
 
-                    <span class="vote_pointsNumber">
+                    <span class="vote_points_number">
                     <?php   $upvotes = get_story_upvotes($story['id']);
                         $downvotes = get_story_downvotes($story['id']); ?>
                         <?=intval($upvotes['n_upvotes']) -  intval($downvotes['n_downvotes'])?>

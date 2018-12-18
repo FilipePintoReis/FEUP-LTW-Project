@@ -43,6 +43,7 @@
     
     //header('Location: /pages' . '/' . $_SESSION['curr_file']);
     echo json_encode( array(
-        'votes' => $vote_points
+        'votes' => $vote_points,
+        'id_story' => $id_story
     ));
  ?>

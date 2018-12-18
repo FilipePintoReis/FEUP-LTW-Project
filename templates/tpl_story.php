@@ -1,5 +1,5 @@
 <section id="story_content">
-    <article>
+    <article id=<?=$story['id']?>>
         <header>
             <h2><?=$story['name']?></h2>
         </header>
@@ -52,7 +52,7 @@
                         Vote Points
                     </span>
 
-                    <span class="vote_pointsNumber">
+                    <span class="vote_points_number">
                         <?php   $upvotes = get_story_upvotes($story['id']);
                          $downvotes = get_story_downvotes($story['id']); ?>
                          <?=intval($upvotes['n_upvotes']) -  intval($downvotes['n_downvotes'])?>
