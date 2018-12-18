@@ -11,7 +11,7 @@
     $fullname = $_POST['fullname'];
     $bio = $_POST['bio'];
 
-    
+
     if(user_already_exists($username) && $username != $user['username']){
         $_SESSION['error_messages'][] = "Username already in use!";
         $referer = '/pages/edit_profile.php';
