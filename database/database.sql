@@ -29,7 +29,7 @@ CREATE TABLE Story (
 	title 		TEXT,
 	content 	TEXT,
 	date_posted DATETIME,
-	url			VARCHAR,
+	url			TEXT,
 	n_upvotes 	INTEGER,
 	n_downvotes INTEGER
 );
@@ -110,9 +110,34 @@ INSERT INTO Channel VALUES (NULL, 'Almost died');
 
 --A notação da data está mal é preciso mudar para o que era preciso
 
-INSERT INTO Story VALUES (NULL, 1, 1, 'I almost made it to the bus stop', 'aa', '2015-06-15 00:00:00', '../post_images/avatar.jpg', 3, 0); --id_story id_user id_channel title content date_posted
-INSERT INTO Story VALUES (NULL, 2, 2, 'story2' , 'aa2', '2016-06-15 00:00:00', '../post_images/avatar.jpg', 0, 3);
-INSERT INTO Story VALUES (NULL, 3, 3, 'story3' , 'I almost made it, but a kid shoved me and I fell on the water. My phone was so hot that there was smoke on the water.', '2018-12-10 00:00:00', '../post_images/avatar.jpg', 0, 0);
+INSERT INTO Story VALUES (NULL, 1, 1, 'I almost made it to the bus stop',
+	'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in elit neque. Donec in fringilla lectus. Nulla mattis lectus a congue porta. Praesent tempor ultrices mauris a posuere. Quisque eu finibus neque, eu placerat mauris. Integer tellus nulla, pellentesque ut sapien aliquet, lacinia vulputate quam. Proin eget libero ut nibh blandit auctor. Suspendisse venenatis porta lorem, ut imperdiet dui rutrum luctus. Mauris at magna pretium, iaculis metus ut, ullamcorper nunc. Suspendisse malesuada fermentum ornare.
+	Nunc commodo odio in tincidunt condimentum. Nunc risus velit, posuere ac rutrum nec, volutpat vitae massa. Nunc pellentesque lorem lacus, ut porttitor turpis imperdiet a. Quisque ac nunc felis. Sed vehicula risus mauris, ut laoreet ex euismod et. Vestibulum in nibh viverra, viverra diam id, lobortis arcu. Nullam orci quam, congue at lorem nec, pellentesque varius quam.',
+ 	'2015-06-15 00:00:00', '../post_images/avatar.jpg', 3, 0); --id_story id_user id_channel title content date_posted
+
+
+INSERT INTO Story VALUES (NULL, 2, 2, 'My cat is better than yours' ,
+	'Ut ut ultrices neque, eget tincidunt purus. Ut in lacus quis orci elementum consectetur. Aliquam erat volutpat. Sed ac risus interdum, dictum neque et, tincidunt leo. Praesent eget eros urna. Curabitur ac tempor nunc, eu faucibus eros. Mauris sed commodo eros, sit amet sodales massa. In sed enim quam. Proin id feugiat nunc. Nulla tincidunt enim at porttitor rutrum. Nullam ac arcu non orci laoreet laoreet et non diam. Nulla dolor diam, tempus id lobortis nec, eleifend efficitur est. Suspendisse potenti. Donec est tortor, venenatis non tellus quis, malesuada gravida felis. Phasellus ut ipsum vitae elit sagittis ultrices nec quis diam. Etiam pulvinar vel purus ac convallis.
+	Duis turpis ante, lobortis sit amet risus in, tincidunt iaculis elit. Morbi iaculis vestibulum imperdiet. Nam congue in lorem eget venenatis. Pellentesque vitae pharetra diam, lacinia congue leo. Sed non porttitor purus, non tempus ligula. Donec nec ultrices leo. Nullam nec luctus leo, at iaculis risus. In hac habitasse platea dictumst. Nam ultrices ornare viverra.',
+	'2016-06-15 00:00:00', '../post_images/avatar.jpg', 0, 3);
+
+INSERT INTO Story VALUES (NULL, 3, 3, 'I lost the bus. Never had I ever lost something that big' ,
+	'Vivamus posuere semper libero, pharetra rutrum augue sagittis id. Etiam et posuere mi. Fusce vitae nibh non ex malesuada dapibus. Pellentesque congue urna nec justo placerat aliquet. Sed pulvinar lobortis sapien vel eleifend. Fusce quis eros varius, vulputate dolor et, lacinia lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas ut pharetra ligula. Donec volutpat est vel lorem vulputate, non ornare libero malesuada. Ut a ipsum a dolor suscipit blandit quis a nulla. In hac habitasse platea dictumst. Pellentesque convallis tristique ante. Proin malesuada suscipit porta.
+	Donec tristique lacus a erat rhoncus feugiat. Nullam luctus placerat nisi sit amet ullamcorper. Morbi bibendum diam in mi pellentesque, sed venenatis enim ultrices. In hac habitasse platea dictumst. Fusce rhoncus, ante et suscipit euismod, arcu tellus pretium turpis, id gravida nulla nisi in tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In faucibus tempus ex. Pellentesque ligula massa, aliquam vel ante id, laoreet imperdiet tellus. Proin mattis lectus volutpat metus viverra, at pharetra sem malesuada.
+	Duis rutrum massa non neque tincidunt, vitae finibus metus accumsan. Nulla magna lorem, elementum id laoreet vel, pretium eget mauris. Nulla sed nulla velit. Nullam semper eros feugiat cursus vestibulum. Praesent pretium quis arcu at iaculis. Sed vel vulputate sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin justo enim, sagittis laoreet rutrum eu, gravida et quam. Nam ex ante, laoreet at fringilla sed, pretium non nisi.',
+	'2018-12-10 00:00:00', '../post_images/avatar.jpg', 0, 0);
+
+INSERT INTO Story VALUES (NULL, 4, 3, 'How can you be nice when someone is in front of you?' ,
+	'Vivamus posuere semper libero, pharetra rutrum augue sagittis id. Etiam et posuere mi. Fusce vitae nibh non ex malesuada dapibus. Pellentesque congue urna nec justo placerat aliquet. Sed pulvinar lobortis sapien vel eleifend. Fusce quis eros varius, vulputate dolor et, lacinia lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas ut pharetra ligula. Donec volutpat est vel lorem vulputate, non ornare libero malesuada. Ut a ipsum a dolor suscipit blandit quis a nulla. In hac habitasse platea dictumst. Pellentesque convallis tristique ante. Proin malesuada suscipit porta.
+	Donec tristique lacus a erat rhoncus feugiat. Nullam luctus placerat nisi sit amet ullamcorper. Morbi bibendum diam in mi pellentesque, sed venenatis enim ultrices. In hac habitasse platea dictumst. Fusce rhoncus, ante et suscipit euismod, arcu tellus pretium turpis, id gravida nulla nisi in tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In faucibus tempus ex. Pellentesque ligula massa, aliquam vel ante id, laoreet imperdiet tellus. Proin mattis lectus volutpat metus viverra, at pharetra sem malesuada.
+	Duis rutrum massa non neque tincidunt, vitae finibus metus accumsan. Nulla magna lorem, elementum id laoreet vel, pretium eget mauris. Nulla sed nulla velit. Nullam semper eros feugiat cursus vestibulum. Praesent pretium quis arcu at iaculis. Sed vel vulputate sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin justo enim, sagittis laoreet rutrum eu, gravida et quam. Nam ex ante, laoreet at fringilla sed, pretium non nisi.',
+	'2018-12-10 00:00:00', '../post_images/avatar.jpg', 0, 0);
+
+INSERT INTO Story VALUES (NULL, 3, 1, 'Feeling like a fish underwater lmao' ,
+	'Vivamus posuere semper libero, pharetra rutrum augue sagittis id. Etiam et posuere mi. Fusce vitae nibh non ex malesuada dapibus. Pellentesque congue urna nec justo placerat aliquet. Sed pulvinar lobortis sapien vel eleifend. Fusce quis eros varius, vulputate dolor et, lacinia lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas ut pharetra ligula. Donec volutpat est vel lorem vulputate, non ornare libero malesuada. Ut a ipsum a dolor suscipit blandit quis a nulla. In hac habitasse platea dictumst. Pellentesque convallis tristique ante. Proin malesuada suscipit porta.
+	Donec tristique lacus a erat rhoncus feugiat. Nullam luctus placerat nisi sit amet ullamcorper. Morbi bibendum diam in mi pellentesque, sed venenatis enim ultrices. In hac habitasse platea dictumst. Fusce rhoncus, ante et suscipit euismod, arcu tellus pretium turpis, id gravida nulla nisi in tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In faucibus tempus ex. Pellentesque ligula massa, aliquam vel ante id, laoreet imperdiet tellus. Proin mattis lectus volutpat metus viverra, at pharetra sem malesuada.
+	Duis rutrum massa non neque tincidunt, vitae finibus metus accumsan. Nulla magna lorem, elementum id laoreet vel, pretium eget mauris. Nulla sed nulla velit. Nullam semper eros feugiat cursus vestibulum. Praesent pretium quis arcu at iaculis. Sed vel vulputate sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin justo enim, sagittis laoreet rutrum eu, gravida et quam. Nam ex ante, laoreet at fringilla sed, pretium non nisi.',
+	'2018-12-10 00:30:00', '../post_images/avatar.jpg', 0, 0);
 
 INSERT INTO Comment VALUES (NULL, 1, 1, NULL,'Jose commented something', '2015-06-15 00:00:00', 1, 0); --id_comment id_story id_user	id_parent content datePosted
 INSERT INTO Comment VALUES (NULL, 1, 2, NULL, 'Jose1 commented Jose comment', '2015-06-15 00:00:00', 1, 0);

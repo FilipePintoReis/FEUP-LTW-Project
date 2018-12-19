@@ -4,7 +4,7 @@
             <h2><?=$story['name']?></h2>
         </header>
         <script src="../js/main.js" defer></script>
-        <div class="story_content">
+        <div class="one_story_content">
             <div class="story_image">
                 <h2>Image</h2>
             </div>
@@ -48,7 +48,7 @@
                     <button type="submit" name="upvote" onclick="vote(<?=$story['id']?>, 1)" ><i class="fas fa-caret-square-up"></i></button>
                      <button type="submit" name="downvote" onclick="vote(<?=$story['id']?>, -1)" ><i class="fas fa-caret-square-down"></i></button>
                 </div>
-                
+
                 <span id="vote_points">
                     Vote Points
                 </span>
@@ -58,7 +58,7 @@
                      $downvotes = get_story_downvotes($story['id']); ?>
                      <?=intval($upvotes['n_upvotes']) -  intval($downvotes['n_downvotes'])?>
                 </span>
-                
+
             </span>
             <span id="comment"><a class="comments" href="story.php?id=<?=$story['id']?>#comments">Comment</a></span>
         </footer>

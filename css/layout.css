@@ -1,0 +1,273 @@
+
+/* **** HEADER **** */
+
+header.head{
+    position: fixed;
+    top: 0;
+    width: 100% !important;
+    min-width: 650px;
+    z-index: 1;
+    height:40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    transition: height 0.2s;
+  /* top: -50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4%;
+  border: 1px solid White;
+  text-align: center;
+  background-image: url("../images/titlebg.png");
+  background-size: 9.5%;
+  transition: all 0.5s cubic-bezier(.12,.08,.27,1.33); */
+}
+
+.middle_box {
+    display: flex;
+    height:100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1300px;
+    width: 100%;
+}
+
+.middle_box > div{
+    flex: 1;
+}
+
+.homepage_link {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2em;
+}
+
+.homepage_link > h1 {
+    margin: 0;
+}
+
+.homepage_link > a {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.search_bar {
+    margin: 0;
+}
+
+div.search_bar > form {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+form.search_form > input:first-child{
+    margin-right: 1em;
+}
+
+form.search_form > input:last-child:hover{
+    height:100%;
+}
+
+.profile{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.profile > span, .profile > span > a {
+    height: 100%;
+}
+
+.profile > .login_button, .profile > .profile_button {
+    height: 100%;
+}
+
+/* **** ASIDE **** */
+.side_bar {
+    position: relative;
+    right: 20px;
+    width: 300px;
+    flex: 0 0 300px;
+}
+
+#create_post {
+    position: relative;
+    width: inherit;
+    height: 200px;
+}
+
+#create_post > img {
+    z-index: 1;
+}
+
+#create_post > span {
+    position: absolute;
+    width: 100%;
+    top: 89%;
+    z-index: 2;
+}
+
+#trending_categories {
+    position: relative;
+    width: inherit;
+    height: 200px;
+    margin-top: 20px;
+}
+
+#recent_posts {
+    position: relative;
+    width: inherit;
+    height: 200px;
+    margin-top: 20px;
+}
+
+
+/* **** BODY **** */
+
+
+body{
+    margin: 0;
+    width: auto !important;
+    min-width: 1000px;
+}
+
+.content {
+    position: relative;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    width: 100%;
+}
+
+.content > section {
+    width:100%;
+}
+
+#stories {
+    margin-right: 40px;
+}
+
+#stories > article {
+    display:flex;
+    flex-direction: column;
+    height: 150px;
+    align-items: stretch;
+    justify-content: center;
+}
+
+#stories > article > header > * {
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+#stories > article > header{
+    height: 10%;
+    margin-bottom: 5px
+}
+#stories > article > footer {
+    height: 20%;
+}
+
+#stories > article > .story_content {
+    height: 80%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+#stories > article > .story_content > .story_image{
+    flex: 0 0 140px;
+    height:100%;
+    margin: 5px;
+}
+
+#stories > article > .story_content > .story_image > img{
+    width:100%;
+    height:100%;
+}
+
+#stories > article > .story_content > .story_text{
+    width: 100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#stories > article > .story_content > .story_text > .story_title{
+    width: 100%;
+    height:80%;
+    display: flex;
+    align-items: center;
+}
+
+#stories > article > .story_content > .story_text > .story_title > a{
+    width: 100%;
+}
+
+#stories > article > .story_content > .story_text > .story_details {
+    width: 100%;
+    height:20%;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#stories > article > .story_content > .story_text > .story_details > #date {
+    margin-left: 20px;
+}
+
+#stories > article > footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#stories > article > footer > #vote{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+}
+
+#stories > article > footer > #vote > *{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#stories > article > footer > #comment{
+    width: 20%;
+    height: 100%;
+}
+
+#stories > article > footer > #comment{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#stories > article > footer > #comment > a{
+    height: 100%;
+
+}

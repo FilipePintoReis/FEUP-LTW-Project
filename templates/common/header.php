@@ -6,43 +6,36 @@
     <title>VoteIt</title>
     <meta charset="utf-8">
     <link rel=icon href="../../images/icon.jpeg">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/new_style.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 </head>
 
 <body>
     <header class = "head">
-        <div class="homepage_link">
-            <h1><a href="../index.php">Potatoe</a></h1>
-        </div>
-        <div class="search_bar">
-            <form class="search" action="../actions/action_search.php" method="post">
-                <textarea name="input" rows="1" cols="36"></textarea>
-                <input type="submit" name="search" value="search">
-            </form>
-        </div>
-        <div class="profile">
-            <?php if(!isset($_SESSION['username'])){ ?>
-                <h3> <a href="./login.php">Login</a> </h3>
-                <h3> <a href="./signup.php">Sign Up</a> </h3>
-            <?php  } else { ?>
-                <h3> <a class="button" href="../pages/profile.php">Profile</a> </h3>
-                <h3> <a class="button" href="../actions/action_logout.php">Logout</a> </h3>
-            <?php }?>
+        <div class="middle_box">
+            <div class="homepage_link">
+                <span class="logo"><img height="35" width="30" href="../index.php" src="../images/icon.png" alt="Potato"></span>
+                <h1><a href="../index.php">Potatoe</a></h1>
+            </div>
+            <div class="search_bar">
+                <form class="search_form" action="../actions/action_search.php" method="post">
+                    <input type="text" name="input" placeholder="Blow my mind"></textarea>
+                    <input type="submit" name="search" value="SEARCH">
+                </form>
+            </div>
+            <div class="profile">
+                <?php if(!isset($_SESSION['username'])){ ?>
+                    <span class="login_button"> <a href="./login.php">LOGIN</a> </span>
+                    <span class="signup_button"><a href="./signup.php">SIGN UP</a></span>
+                <?php  } else { ?>
+                    <span class="profile_button"><a class="button" href="../pages/profile.php">PROFILE</a></span>
+                    <span class="logout_button"><a class="button" href="../actions/action_logout.php">LOGOUT</a> </span>
+
+                <?php }?>
+            </div>
         </div>
     </header>
 
-    <aside class="side_bar">
-        <section>
-            <img src="../images/pic1.png" alt="tHe mEmEs">
-        </section>
-        <section id="create_post">
-            <p> <a href="create_story.php"> Create a Story</a></p>
-        </section>
-        <section id="trending_categories">
-            <p>Trending Categories</p>
-        </section>
-        <section id="recent_posts">
-            <p>Recent Posts</p>
-        </section>
-    </aside>
+    <section class="content">
