@@ -73,11 +73,20 @@
 
     function insert_story($id_user, $id_channel, $title, $content, $date_posted, $url){
         $db = Database::instance()->db();
-        $stmt = $db->prepare('INSERT INTO Story VALUES (NULL, ?, ?, ?, ?, ?, ?);
+        $stmt = $db->prepare('INSERT INTO Story VALUES (NULL, ?, ?, ?, ?, ?, ?, 0, 0);
                             ');
         $stmt->execute(array($id_user, $id_channel, $title, $content, $date_posted, $url));
         return true;
     };
+
+    function get_channel_id_from_name($channel_name){
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('  SELECT Channel.id FROM Channel
+                                WHERE Channel.name = ?;
+                            ');
+        $stmt->execute(array($channel_name));
+        return $stmt->fetch();
+    }
 
     /* *****   STORY VOTES   ***** */
 
