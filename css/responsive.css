@@ -1,0 +1,32 @@
+/*
+
+PRUSSIAN BLUE: #0B3C5D
+SKY BLUE: #328CC1
+GOLD LEAF: #D9B310
+IVORY BLACK: #1D2731
+
+OR
+
+NAVY BLUE: #18121E
+GUNMETAL: #233237
+RUSTY RED: #984B43
+WARM YELLOW: #EAC67A
+WARM YELLOW (OC): #C9A24F
+WHITE: #FFFFFF
+*/
+
+header.head:hover {
+    height:60px;
+}
+
+.profile > span > a:hover{
+    background-color: #C9A24F;
+}
+
+form.search_form > input:last-child:hover{
+    background-color: #C9A24F;
+}
+
+#stories > article > footer > #comment > a:hover {
+    background-color: #C9A24F;
+}

@@ -4,9 +4,9 @@
 
     function get_all_stories(){
         $db = Database::instance()->db();
-        $stmt = $db->prepare('  SELECT Story.id AS id, name, username, title, date_posted
+        $stmt = $db->prepare('  SELECT Story.id AS id, Story.url AS url, name, username, title, date_posted
                                 FROM Story, Channel, User
-                                WHERE ((Story.id_channel = Channel.id) AND (Story.id_user == User.id))
+                                WHERE ((Story.id_channel = Channel.id) AND (Story.id_user = User.id))
                                 ORDER BY Story.date_posted DESC;'
                             );
         $stmt->execute();
@@ -73,11 +73,27 @@
 
     function insert_story($id_user, $id_channel, $title, $content, $date_posted, $url){
         $db = Database::instance()->db();
-        $stmt = $db->prepare('INSERT INTO Story VALUES (NULL, ?, ?, ?, ?, ?, ?);
+        $stmt = $db->prepare('INSERT INTO Story VALUES (NULL, ?, ?, ?, ?, ?, ?, 0, 0);
                             ');
         $stmt->execute(array($id_user, $id_channel, $title, $content, $date_posted, $url));
         return true;
     };
+
+    function update_picture_story($id_story, $picture) {
+        global $dbh;
+        $stmt = $dbh->prepare('UPDATE Story SET picture = ? WHERE id = ?');
+        $stmt->execute(array($picture, $id_story));
+        return true;
+    }
+
+    function get_channel_id_from_name($channel_name){
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('  SELECT Channel.id FROM Channel
+                                WHERE Channel.name = ?;
+                            ');
+        $stmt->execute(array($channel_name));
+        return $stmt->fetch();
+    }
 
     /* *****   STORY VOTES   ***** */
 
