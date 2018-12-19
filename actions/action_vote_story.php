@@ -41,10 +41,12 @@
 
 
     $vote_points = get_story_upvotes($id_story)['n_upvotes'] - get_story_downvotes($id_story)['n_downvotes'];
+    $user_value = get_story_vote($id_story, $id_user['id']);
     
     //header('Location: /pages' . '/' . $_SESSION['curr_file']);
     echo json_encode( array(
         'votes' => $vote_points,
-        'id_story' => $id_story
+        'id_story' => $id_story,
+        'user_value'=> $user_value
     ));
  ?>
