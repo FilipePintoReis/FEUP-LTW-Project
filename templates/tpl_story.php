@@ -12,7 +12,7 @@
                 <h1><a href="../pages/story.php?id=<?=$story['id']?>"><?=$story['title']?></a></h1>
             </div>
             <div class="story_details">
-                <span id="user">Posted by <?=$story['username']?></span>
+                <span id="user">Posted by <?= htmlspecialchars($story['username']) ?></span>
                 <span id="date">
                     <?php   $time = strtotime($story['date_posted']);
                             $dbDate = new DateTime($story['date_posted']);
@@ -37,7 +37,7 @@
             </div>
             <div class="story_text">
                 <?php foreach ($paragraphs as $paragraph) {?>
-                    <p><?= $paragraph ?></p>
+                    <p><?= htmlspecialchars($paragraph) ?></p>
                 <?php } ?>
             </div>
         </div>
@@ -96,8 +96,8 @@ function recursive_comment($comment, $counter){
     <ul>
         <?php foreach ($comment_list as $son) {?>
             <li>
-            <p><?= $son['content'] ?></p>
-            <p>by <?= $son['username'] ?></p>
+            <p><?= htmlspecialchars($son['content']) ?></p>
+            <p>by <?= htmlspecialchars($son['username']) ?></p>
             <?php 
             if($comment_list != false)
                 recursive_comment($son, $counter + 1); ?>

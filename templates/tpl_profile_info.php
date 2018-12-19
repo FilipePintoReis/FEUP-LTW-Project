@@ -13,7 +13,7 @@
 <section class=profile_info>
     <img src=<?=$user['url']?> alt="Literaly Avatar">
         <div class="username">
-            <h1><?=$user['username']?></h1>
+            <h1><?= htmlspecialchars($user['username']) ?></h1>
             <a class="edit_profile_button" href="../pages/edit_profile.php">
                 <button class="button" type="button">Edit Profile</button>
             </a>
@@ -26,8 +26,8 @@
         </div>
     </div>
     <div class="description">
-        <h1><?=$user['fullname']?></h1>
+        <h1><?= htmlspecialchars($user['fullname']) ?></h1>
         <br>
-        <span><?=$user['bio']?></span>
+        <span><?= htmlspecialchars($user['bio']) ?></span>
     </div>
 </section>

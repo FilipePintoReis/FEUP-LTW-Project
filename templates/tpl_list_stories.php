@@ -7,13 +7,13 @@
             <script src="../js/main.js" defer></script>
             <div class="story_content">
                 <div class="story_title">
-                    <h1><a href="../pages/story.php?id=<?=$story['id']?>"><?=$story['title']?></a></h1>
+                    <h1><a href="../pages/story.php?id=<?=$story['id']?>"><?= htmlspecialchars($story['title'])?></a></h1>
                 </div>
                 <div class="story_image">
                     <h2>Image</h2>
                 </div>
                 <div class="story_details">
-                    <span id="user">Posted by <?=$story['username']?></span>
+                    <span id="user">Posted by <?= htmlspecialchars($story['username']) ?></span>
                     <span id="date">
                         <?php   $time = strtotime($story['date_posted']);
                                 $dbDate = new DateTime($story['date_posted']);
