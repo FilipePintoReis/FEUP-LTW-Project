@@ -15,7 +15,7 @@
  <section id="create_post">
      <h1>Create Post</h1>
      <form class="create_post" action='../actions/action_create_post.php' method="post" enctype="multipart/form-data">
-         <select class="channel_selector" name="Channel">
+         <select class="channel_selector" name="channel">
              <?php foreach ($channels as $channel) { ?>
                  <option value="<?=$channel['name']?>"><?=$channel['name']?></option>
              <?php } ?>

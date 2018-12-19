@@ -145,8 +145,14 @@ INSERT INTO Comment VALUES (NULL, 1, 2, NULL, 'Jose1 commented Jose comment', '2
 INSERT INTO Comment VALUES (NULL, 2, 2, NULL,'Jose1 said something', '2015-06-15 00:00:00', 0, 1);
 INSERT INTO Comment VALUES (NULL, 2, 3, NULL, 'Jose2 said Jose1 said', '2015-06-15 00:00:00', 0, 1);
 
-INSERT INTO Comment VALUES (NULL, 3, 3, NULL,'Jose2 heard something', '2015-06-15 00:00:00', 0, 0);
-INSERT INTO Comment VALUES (NULL, 3, 3, NULL, 'Jose2 heard Jose2 hearing', '2015-06-15 00:00:00', 0, 0);
+INSERT INTO Comment VALUES (NULL, 3, 3, NULL,'Moms spaghetti', '2015-06-15 00:00:00', 0, 0);
+INSERT INTO Comment VALUES (NULL, 3, 3, NULL, 'I broke my nose at aquashow', '2015-06-15 00:00:00', 0, 0);
+
+INSERT INTO Comment VALUES (NULL, 3, 3, 6,'Jose2 heard something', '2015-06-15 00:00:00', 0, 0);
+INSERT INTO Comment VALUES (NULL, 3, 3, 6, 'Jose2 heard Jose2 hearing', '2015-06-15 00:00:00', 0, 0);
+INSERT INTO Comment VALUES (NULL, 3, 3, 8,'Jose2 heard something', '2015-06-15 00:00:00', 0, 0);
+
+
 
 INSERT INTO StoryVote VALUES (1, 1, 1); -- id_story id_user value
 INSERT INTO StoryVote VALUES (1, 2, 1);

@@ -44,22 +44,19 @@
 
     function get_all_comments_from_story($id_story){
         $db = Database::instance()->db();
-        $stmt = $db->prepare('  SELECT * from Story, Comment, User
-                                WHERE((Story.id = ?)
-                                AND (Story.id = Comment.id_story)
-                                AND (Comment.id_parent IS NULL )
-                                AND (Comment.id_user = User.id))');
+        $stmt = $db->prepare('SELECT Comment.id, username, content, datePosted, n_upvotes, n_downvotes
+                                FROM Comment JOIN User ON Comment.id_user = User.id
+                                WHERE id_story = ? and id_parent is null;');
         $stmt->execute(array($id_story));
         return $stmt->fetchAll();
     }
 
-    function get_all_comments_from_comment($id_story, $id_comment){
+    function get_all_comments_from_comment($id_comment){
         $db = Database::instance()->db();
-        $stmt = $db->prepare('  SELECT *
-                                FROM Story, Comment, User
-                                WHERE ((Story.id = ?) AND (Story.id = Comment.id_story) AND (Comment.id_parent = ?))'
-                            );
-        $stmt->execute(array($id_story, $id_comment));
+        $stmt = $db->prepare('SELECT Comment.id, username, content, datePosted, n_upvotes, n_downvotes
+                                FROM Comment JOIN User ON Comment.id_user = User.id
+                                WHERE id_parent = ?;');
+        $stmt->execute(array($id_comment));
         return $stmt->fetchAll();
     }
 
@@ -76,7 +73,7 @@
 
     function insert_story($id_user, $id_channel, $title, $content, $date_posted, $url){
         $db = Database::instance()->db();
-        $stmt = $db->prepare('INSERT INTO Story VALUES (NULL, ?, ?, ?, ?, ?, ?);
+        $stmt = $db->prepare('INSERT INTO Story VALUES (NULL, ?, ?, ?, ?, ?, ?, 0, 0);
                             ');
         $stmt->execute(array($id_user, $id_channel, $title, $content, $date_posted, $url));
         return true;
@@ -87,6 +84,15 @@
         $stmt = $dbh->prepare('UPDATE Story SET picture = ? WHERE id = ?');
         $stmt->execute(array($picture, $id_story));
         return true;
+    }
+
+    function get_channel_id_from_name($channel_name){
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('  SELECT Channel.id FROM Channel
+                                WHERE Channel.name = ?;
+                            ');
+        $stmt->execute(array($channel_name));
+        return $stmt->fetch();
     }
 
     /* *****   STORY VOTES   ***** */
