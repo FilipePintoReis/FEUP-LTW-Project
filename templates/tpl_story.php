@@ -64,30 +64,28 @@
         </footer>
 
     </article>
-</section>
-<ul id="story_comments">
-    <?php foreach ($comments_result as $comment) {?>
-        <li>
-            <p><?= htmlspecialchars($comment['content']) ?></p>
-            <p>by <?= $comment['username'] ?></p>
-            <?php $comment_list = get_all_comments_from_comment($comment['id']);  
-             // var_dump($comment_list);
-             // var_dump($comment['id']);
-             ?>
-        </li>
-        
-
-
-        <?php 
+    <ul id="story_comments">
+        <?php foreach ($comments_result as $comment) {?>
+            <li>
+                <p><?= htmlspecialchars($comment['content']) ?></p>
+                <p>by <?= $comment['username'] ?></p>
+                <?php $comment_list = get_all_comments_from_comment($comment['id']);
+                // var_dump($comment_list);
+                // var_dump($comment['id']);
+                ?>
+            </li>
+            
+            <?php
             if($comment_list != false){
                 recursive_comment($comment, 0);
             } ?>
-    <?php } ?>
-</ul>
+        <?php } ?>
+    </ul>
+</section>
 
 <?php
 
-function recursive_comment($comment, $counter){ 
+function recursive_comment($comment, $counter){
 
     $comment_list = get_all_comments_from_comment($comment['id']);
     // echo $comment_list;
@@ -98,14 +96,14 @@ function recursive_comment($comment, $counter){
             <li>
             <p><?= htmlspecialchars($son['content']) ?></p>
             <p>by <?= htmlspecialchars($son['username']) ?></p>
-            <?php 
+            <?php
             if($comment_list != false)
                 recursive_comment($son, $counter + 1); ?>
             </li>
     <?php } ?>
-    </ul> 
-    
-    
+    </ul>
+
+
 
 <?php
 }

@@ -205,6 +205,14 @@ body > * {
     transition: border 0.2s, background-color 0.2s;
 }
 
+input[type=submit]{
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid Black;;
+  border-radius: 20px;
+  cursor: url("../images/pikapika.png"), auto;
+}
 
 body {
 
