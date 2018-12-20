@@ -7,7 +7,7 @@ Maria Teresa Queiroz Machado Urbano Ferreira	    201603811 : 201603811@fe.up.pt
 Pedro António Ferreira Cardoso Videira Lopes        201603557 : up201603557@fe.up.pt
 
 username: pedro123
-password: 123*Ola_
+password: 123+Ola-
 
 CSS:
-Used www.fontawsome.com
+Used www.fontawesome.com
