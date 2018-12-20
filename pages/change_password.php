@@ -10,6 +10,7 @@
     $user = get_user_from_username($_SESSION['username']);
 
     include(ABSPATH . '/templates/common/header.php');
+    include(ABSPATH . '/templates/common/alerts.php');
  ?>
 
  <section id="change_password">

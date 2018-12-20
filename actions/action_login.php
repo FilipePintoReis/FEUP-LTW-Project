@@ -3,12 +3,18 @@
     include_once(ABSPATH . '/includes/session.php');
     include_once(ABSPATH . '/database/db_user.php');
 
+    if (isset($_SESSION['username'])) {
+        die(header('Location: ../pages/login.php'));
+    }
+
     if ( !preg_match ("/^[a-zA-Z][\w-]{1,18}(?![-_])\w$/", $_POST['username'])) {
-      die("ERROR: Username invalid");
+      $_SESSION['error_messages'][] = "ERROR: Username invalid";
+      die(header('Location: ../pages/login.php'));
     }
 
     if ( !preg_match ("/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[&quot;-_?!@#+*$%&\/\(\)=])[&quot;\w\-?!@#+*$%&\/\(\)=]{8,32}$/", $_POST['password'])) {
-      die("ERROR: password");
+      $_SESSION['error_messages'][] = "ERROR: password";
+      die(header('Location: ../pages/login.php'));
     }
 
     $username = $_POST['username'];

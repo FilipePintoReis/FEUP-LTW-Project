@@ -39,19 +39,17 @@ form.search_form > input:last-child:hover{
     cursor: url("../images/pikapika.png"), auto;
 }
 
-
 input[type=submit]{
   cursor: url("../images/pikapika.png"), auto;
 }
 
-@media screen and (max-width: 1024px){
-    .side_bar > .aside_content {
-        display: none;
-    }
-}
 
-@media screen and (min-width: 1024px){
-    .side_bar > .opening_tab {
-        display: none;
+    .side_bar:hover{
+    width: 300px;
+    opacity: 1;
+    color: #FFFFFF;
     }
-}
+
+    .side_bar > *:hover {
+        opacity:1;
+    }

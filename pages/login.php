@@ -7,6 +7,8 @@
     }
 
     include(ABSPATH . '/templates/common/header.php');
+    include(ABSPATH . '/templates/common/alerts.php');
+
  ?>
 
  <section id="login">

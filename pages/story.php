@@ -14,6 +14,7 @@
 
 
     include(ABSPATH . '/templates/common/header.php');
+    include(ABSPATH . '/templates/common/alerts.php');
     include(ABSPATH . '/templates/tpl_story.php');
     include(ABSPATH . '/templates/common/footer.php');
 ?>

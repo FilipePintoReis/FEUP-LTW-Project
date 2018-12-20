@@ -11,6 +11,7 @@
     echo $user['fullname'];
 
     include(ABSPATH . '/templates/common/header.php');
+    include(ABSPATH . '/templates/common/alerts.php');
  ?>
 
  <section id="edit_profile">

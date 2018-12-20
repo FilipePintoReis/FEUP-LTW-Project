@@ -7,10 +7,8 @@
     $channels = get_all_channels();
 
     include(ABSPATH . '/templates/common/header.php');
-
-    
-
- ?>
+    include(ABSPATH . '/templates/common/alerts.php');
+?>
 
  <section id="create_post">
      <h1>Create Post</h1>

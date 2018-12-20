@@ -5,6 +5,21 @@
 
     //VERIFY using preg_match each parameter
 
+    if ( !preg_match ("/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[&quot;-_?!@#+*$%&\/\(\)=])[&quot;\w\-?!@#+*$%&\/\(\)=]{8,32}$/", $_POST['old_password'])) {
+        $_SESSION['error_messages'][] = "ERROR: password invalid";
+        die(header('Location: ../pages/change_password.php'));
+    }
+
+    if ( !preg_match ("/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[&quot;-_?!@#+*$%&\/\(\)=])[&quot;\w\-?!@#+*$%&\/\(\)=]{8,32}$/", $_POST['new_password'])) {
+        $_SESSION['error_messages'][] = "ERROR: confirm_password invalid";
+        die(header('Location: ../pages/change_password.php'));
+    }
+
+    if ( !preg_match ("/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[&quot;-_?!@#+*$%&\/\(\)=])[&quot;\w\-?!@#+*$%&\/\(\)=]{8,32}$/", $_POST['confirm_password'])) {
+        $_SESSION['error_messages'][] = "ERROR: confirm_password invalid";
+        die(header('Location: ../pages/change_password.php'));
+    }
+
     $user = get_user_from_username($_SESSION['username']);
     $old_password = $_POST['old_password'];
     $new_password = $_POST['new_password'];

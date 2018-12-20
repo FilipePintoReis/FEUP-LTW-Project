@@ -12,6 +12,8 @@
     $stories = get_all_stories_from_user($user['id']); // é preciso meter aqui o id do user que se quer ver o profile
 
     include(ABSPATH . '/templates/common/header.php');
+    include(ABSPATH . '/templates/common/alerts.php');
+
 ?>
 <section class="profile_content">
     <?php

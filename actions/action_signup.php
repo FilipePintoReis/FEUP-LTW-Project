@@ -6,23 +6,28 @@
     //VERIFY using preg_match each parameter
 
     if ( !preg_match ("/^[a-zA-Z][\w-]{1,18}(?![-_])\w$/", $_POST['username'])) {
-      die("ERROR: Username invalid");
+        $_SESSION['error_messages'][] = "ERROR: username invalid";
+        die(header('Location: ../pages/signup.php'));
     }
 
     if ( !preg_match ("/^[a-zA-Z0-9.!#$%&’*+\/\=?^_`{\|}~\-]+@[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*$/", $_POST['email'])) {
-      die("ERROR: email invalid");
+        $_SESSION['error_messages'][] = "ERROR: email invalid";
+        die(header('Location: ../pages/signup.php'));
     }
 
     if ( !preg_match ("/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[&quot;-_?!@#+*$%&\/\(\)=])[&quot;\w\-?!@#+*$%&\/\(\)=]{8,32}$/", $_POST['password'])) {
-      die("ERROR: password invalid");
+        $_SESSION['error_messages'][] = "ERROR: password invalid";
+        die(header('Location: ../pages/signup.php'));
     }
 
     if ( !preg_match ("/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[&quot;-_?!@#+*$%&\/\(\)=])[&quot;\w\-?!@#+*$%&\/\(\)=]{8,32}$/", $_POST['confirm_password'])) {
-      die("ERROR: confirPassword invalid");
+        $_SESSION['error_messages'][] = "ERROR: confirm_password invalid";
+        die(header('Location: ../pages/signup.php'));
     }
 
-    if ( !preg_match ("/^[a-zA-Z][\w-]{1,18}(?![-_])\w$/", $_POST['fullname'])) {
-      die("ERROR: Username invalid");
+    if ( !preg_match ("/^[a-zA-Z ]+$/", $_POST['fullname'])) {
+        $_SESSION['error_messages'][] = "ERROR: username invalid";
+        die(header('Location: ../pages/signup.php'));
     }
 
     $username = $_POST['username'];
