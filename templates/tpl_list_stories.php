@@ -1,4 +1,10 @@
 <section id="stories">
+    <div class="sorting">
+        Sorting:
+        <a href="../pages/homepage.php?sort=recent">Recent</a>
+        <a href="../pages/homepage.php?sort=upvotes">UpVotes</a>
+        <a href="../pages/homepage.php?sort=downvotes">DownVotes</a>
+    </div>
     <?php foreach($stories as $story) { ?>
         <article id=<?=$story['id']?>>
             <header class="channel">

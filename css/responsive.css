@@ -34,6 +34,11 @@ form.search_form > input:last-child:hover{
     cursor: url("../images/pikapika.png"), auto;
 }
 
+#stories > div:first-child > *:hover{
+    background-color: #C9A24F;
+    cursor: url("../images/pikapika.png"), auto;
+}
+
 .profile_info > .profile_details > .username > a > button:hover{
     background-color: #C9A24F;
     cursor: url("../images/pikapika.png"), auto;

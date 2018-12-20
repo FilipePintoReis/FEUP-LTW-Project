@@ -151,6 +151,23 @@ body > * {
     border-color: #233237;
 }
 
+#stories > div:first-child{
+    width: auto;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-top:5px;
+    margin-bottom:5px;
+    border: solid;
+    border-width:thin;
+    border-color: #FFFFFF;
+}
+#stories > div:first-child > *{
+    color:white;
+    text-decoration: none;
+    font-family: "Roboto", "Open Sans", Arial, sans-serif;
+    transition: background-color 0.2s;
+}
+
 #stories > article {
     font: inherit;
     color: inherit;

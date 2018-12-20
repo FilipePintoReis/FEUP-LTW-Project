@@ -13,6 +13,38 @@
         return $stmt->fetchAll();
     };
 
+    function get_all_stories_by_upvotes(){
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('  SELECT Story.id AS id, Story.url AS url, name, username, title, date_posted
+                                FROM Story, Channel, User
+                                WHERE ((Story.id_channel = Channel.id) AND (Story.id_user = User.id))
+                                ORDER BY Story.n_upvotes DESC;'
+                            );
+        $stmt->execute();
+        return $stmt->fetchAll();
+    };
+
+    function get_all_stories_by_downvotes(){
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('  SELECT Story.id AS id, Story.url AS url, name, username, title, date_posted
+                                FROM Story, Channel, User
+                                WHERE ((Story.id_channel = Channel.id) AND (Story.id_user = User.id))
+                                ORDER BY Story.n_downvotes DESC;'
+                            );
+        $stmt->execute();
+        return $stmt->fetchAll();
+    };
+
+    function search_story($search){
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('  SELECT Story.id AS id, Story.url AS url, name, username, title, date_posted
+                                FROM Story, Channel, User
+                                WHERE ((Story.id_channel = Channel.id) AND (Story.id_user = User.id) AND (Story.title LIKE ?));'
+                            );
+        $stmt->execute(array($search));
+        return $stmt->fetchAll();
+    };
+
     function get_all_channels(){
         $db = Database::instance()->db();
         $stmt = $db->prepare('  SELECT name

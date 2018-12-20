@@ -5,13 +5,17 @@
 
     $_SESSION['curr_file'] = basename($_SERVER['PHP_SELF']);
 
-    /*     ---> When user is logged in, present only channels he is subbed to?
-    if(!isset($_SESSION['username'])
-        $stories = get_all_stories();
-    else {
-    } */
-
-    $stories = get_all_stories();
+    switch ($_GET['sort']) {
+        case 'upvotes':
+            $stories = get_all_stories_by_upvotes();
+            break;
+        case 'downvotes':
+            $stories = get_all_stories_by_downvotes();
+            break;
+        default:
+            $stories = get_all_stories();
+            break;
+    }
 
     include(ABSPATH . '/templates/common/header.php');
     include(ABSPATH . '/templates/common/alerts.php');
