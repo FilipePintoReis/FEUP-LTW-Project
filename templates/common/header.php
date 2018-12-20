@@ -3,9 +3,9 @@
 <html>
 
 <head>
-    <title>VoteIt</title>
+    <title>Potatoe</title>
     <meta charset="utf-8">
-    <link rel=icon href="../../images/icon.jpeg">
+    <link rel=icon href="../../images/backless_icon.png">
     <link rel="stylesheet" href="../../css/new_style.css">
     <link rel="stylesheet" href="../../css/layout.css">
     <link rel="stylesheet" href="../../css/responsive.css">
@@ -17,7 +17,7 @@
     <header class = "head">
         <div class="middle_box">
             <div class="homepage_link">
-                <span class="logo"><img height="35" width="30" href="../index.php" src="../images/icon.png" alt="Potato"></span>
+                <span class="logo"><img height="35" width="30" href="../index.php" src="../images/backless_icon.png" alt="Potato"></span>
                 <h1><a href="../index.php">Potatoe</a></h1>
             </div>
             <div class="search_bar">
