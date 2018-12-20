@@ -92,8 +92,21 @@ form.search_form > input:last-child:hover{
 .side_bar {
     position: relative;
     right: 20px;
-    width: 300px;
-    flex: 0 0 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+.side_bar > .opening_tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 0 16px;
+}
+
+.side_bar > .aside_content {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 270px;
 }
 
 #create_post {
@@ -134,7 +147,90 @@ form.search_form > input:last-child:hover{
 body{
     margin: 0;
     width: auto !important;
-    min-width: 1000px;
+    min-width: 650px;
+}
+
+.profile_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile_content > * {
+    width:80%;
+}
+
+.profile_content > .profile_info {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-around;
+    margin-right: 40px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    height:200px;
+}
+
+.profile_info > .profile_image {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 60px;
+}
+
+.profile_info > .profile_details {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    vertical-align: baseline;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 30px;
+    flex: 1 2 30px;
+}
+
+.profile_info > .profile_details > .username {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    vertical-align: baseline;
+    margin-bottom: 10px;
+}
+
+.profile_info > .profile_details > .username > span:first-child{
+    margin-right: 30px;
+}
+
+.profile_info > .profile_details > .username > a{
+    display:flex;
+    align-items: center;
+}
+
+.profile_info > .profile_details > .username > a > button{
+    height:100%;
+}
+
+.profile_info > .profile_details > .social_data {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    vertical-align: baseline;
+    margin-bottom: 15px;
+}
+
+.profile_info > .profile_details > .description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    vertical-align: top;
 }
 
 .content {
@@ -155,6 +251,7 @@ body{
 
 #stories {
     margin-right: 40px;
+    margin-left: 20px;
 }
 
 #stories > article {

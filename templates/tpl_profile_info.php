@@ -11,23 +11,26 @@
  ?>
 
 <section class=profile_info>
-    <img src=<?=$user['url']?> alt="Literaly Avatar">
+    <div class="profile_image">
+        <img width="150" height="150" src=<?=$user['url']?> alt="Literaly Avatar">
+    </div>
+    <div class="profile_details">
         <div class="username">
-            <h1><?= htmlspecialchars($user['username']) ?></h1>
+            <span><?= htmlspecialchars($user['username']) ?></span>
             <a class="edit_profile_button" href="../pages/edit_profile.php">
                 <button class="button" type="button">Edit Profile</button>
             </a>
         </div>
-    <div class="social_data">
-        <div class="num_stories_posted">
-            <span class="text">
-                <span class="number"><?=$n_stories_posted['counter']?></span> stories posted
-            </span>
+        <div class="social_data">
+            <div class="num_stories_posted">
+                <span class="text">
+                    <span class="number"><?=$n_stories_posted['counter']?></span> stories posted
+                </span>
+            </div>
         </div>
-    </div>
-    <div class="description">
-        <h1><?= htmlspecialchars($user['fullname']) ?></h1>
-        <br>
-        <span><?= htmlspecialchars($user['bio']) ?></span>
+        <div class="description">
+            <span><?= htmlspecialchars($user['fullname']) ?></span>
+            <span><?= htmlspecialchars($user['bio']) ?></span>
+        </div>
     </div>
 </section>

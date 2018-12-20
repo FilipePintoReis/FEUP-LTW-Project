@@ -12,7 +12,11 @@
     $stories = get_all_stories_from_user($user['id']); // é preciso meter aqui o id do user que se quer ver o profile
 
     include(ABSPATH . '/templates/common/header.php');
-    include(ABSPATH . '/templates/tpl_profile_info.php');
-    include(ABSPATH . '/templates/tpl_list_stories.php');
-    include(ABSPATH . '/templates/common/footer.php');
 ?>
+<section class="profile_content">
+    <?php
+        include(ABSPATH . '/templates/tpl_profile_info.php');
+        include(ABSPATH . '/templates/tpl_list_stories.php');
+    ?>
+</section>
+<?php  include(ABSPATH . '/templates/common/footer.php');?>
