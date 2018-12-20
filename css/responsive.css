@@ -21,6 +21,7 @@ header.head:hover {
 
 .profile > span > a:hover{
     background-color: #C9A24F;
+    cursor: url("../images/pikapika.png"), auto;
 }
 
 form.search_form > input:last-child:hover{
@@ -29,4 +30,9 @@ form.search_form > input:last-child:hover{
 
 #stories > article > footer > #comment > a:hover {
     background-color: #C9A24F;
+    cursor: url("../images/pikapika.png"), auto;
+}
+
+input[type=submit]{
+  cursor: url("../images/pikapika.png"), auto;
 }
