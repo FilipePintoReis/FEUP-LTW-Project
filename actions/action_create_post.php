@@ -35,7 +35,6 @@
 
     insert_story($id_user, $id_channel, $title, $content, $date, $path); 
     header('Location: ../pages/homepage.php');
-    //TO FINISH THIS YOU NEED TO EXTRACT ID_CHANNEL, TITLE AND CONTENT FROM HTML
 
 
 ?>
