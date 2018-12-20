@@ -66,16 +66,6 @@
 
     </article>
 
-
-    <section id="add_comment">
-        <script src="../js/comments.js" defer></script>
-        <!-- <form class="add_comment" action='../actions/action_comment.php' method="post" enctype="multipart/form-data"> -->
-        <textarea name="inserted_comment" rows="1" cols="80" placeholder="Share your thoughts" required></textarea>
-
-        <input type="submit" name="submit" value="Submit" onclick="add_first_layer_comment_js(0, <?= $story['id']?>)"/>
-        <!-- </form> -->
-    </section>
-
     <ul id="story_comments">
         <form class="add_comment" action='../actions/action_comment.php' method="post" enctype="multipart/form-data">
                 <textarea name="comment_input" rows="3" cols="80" placeholder="Share your thoughts"></textarea>
