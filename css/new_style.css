@@ -237,7 +237,7 @@ body > * {
 .profile_info > .profile_details > .username > a > button{
     background-color: inherit;
     color: #FFFFFF;
-    font-size:14px;
+    font-size: 14px;
     font-weight: bold;
     border: none;
     transition: background-color 0.3s, color 0.3s;

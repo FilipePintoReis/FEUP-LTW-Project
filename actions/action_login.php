@@ -3,7 +3,14 @@
     include_once(ABSPATH . '/includes/session.php');
     include_once(ABSPATH . '/database/db_user.php');
 
-    // CREATE SECURITY USING REGULAR EXPRESSION TO CHECK FOR INJECTION, ETCCC
+    if ( !preg_match ("/^[a-zA-Z][\w-]{1,18}(?![-_])\w$/", $_POST['username'])) {
+      die("ERROR: Username invalid");
+    }
+
+    if ( !preg_match ("/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[&quot;-_?!@#+*$%&\/\(\)=])[&quot;\w\-?!@#+*$%&\/\(\)=]{8,32}$/", $_POST['password'])) {
+      die("ERROR: password");
+    }
+
     $username = $_POST['username'];
     $password = $_POST['password'];
 

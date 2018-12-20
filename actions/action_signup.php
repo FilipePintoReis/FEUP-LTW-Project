@@ -5,6 +5,26 @@
 
     //VERIFY using preg_match each parameter
 
+    if ( !preg_match ("/^[a-zA-Z][\w-]{1,18}(?![-_])\w$/", $_POST['username'])) {
+      die("ERROR: Username invalid");
+    }
+
+    if ( !preg_match ("/^[a-zA-Z0-9.!#$%&’*+\/\=?^_`{\|}~\-]+@[a-zA-Z0-9\-]+(?:\.[a-zA-Z0-9\-]+)*$/", $_POST['email'])) {
+      die("ERROR: email invalid");
+    }
+
+    if ( !preg_match ("/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[&quot;-_?!@#+*$%&\/\(\)=])[&quot;\w\-?!@#+*$%&\/\(\)=]{8,32}$/", $_POST['password'])) {
+      die("ERROR: password invalid");
+    }
+
+    if ( !preg_match ("/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[&quot;-_?!@#+*$%&\/\(\)=])[&quot;\w\-?!@#+*$%&\/\(\)=]{8,32}$/", $_POST['confirm_password'])) {
+      die("ERROR: confirPassword invalid");
+    }
+
+    if ( !preg_match ("/^[a-zA-Z][\w-]{1,18}(?![-_])\w$/", $_POST['fullname'])) {
+      die("ERROR: Username invalid");
+    }
+
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
