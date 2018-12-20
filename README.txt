@@ -9,3 +9,6 @@ Pedro António Ferreira Cardoso Videira Lopes        201603557 : up201603557@fe.
 CREDENTIALS:
 username: pedro123
 password: 123*+Ola-
+
+CSS:
+Used www.fontawsome.com
