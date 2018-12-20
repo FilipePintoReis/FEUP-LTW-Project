@@ -56,7 +56,7 @@
 
     function get_story_from_id($id_story){
         $db = Database::instance()->db();
-        $stmt = $db->prepare('  SELECT Story.id AS id, name, username, title, content, date_posted
+        $stmt = $db->prepare('  SELECT Story.id AS id, Story.url AS url, name, username, title, content, date_posted
                                 FROM Story, User, Channel
                                 WHERE ((Story.id = ?) AND (Story.id_channel = Channel.id) AND (Story.id_user == User.id));'
                             );

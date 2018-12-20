@@ -5,7 +5,11 @@
 
     $_SESSION['curr_file'] = basename($_SERVER['PHP_SELF']);
 
-    switch ($_GET['sort']) {
+        if(!isset($_GET['sort']))
+            $sort = null;
+        else
+            $sort = $_GET['sort'];
+    switch ($sort) {
         case 'upvotes':
             $stories = get_all_stories_by_upvotes();
             break;

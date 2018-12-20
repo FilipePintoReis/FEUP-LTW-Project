@@ -5,12 +5,12 @@
         <header>
             <h2><?=$story['name']?></h2>
         </header>
-        <div class="one_story_content">
-            <div class="story_image">
-                <h2>Image</h2>
-            </div>
+        <div class="story_content">
             <div class="story_title">
                 <h1><a href="../pages/story.php?id=<?=$story['id']?>"><?=$story['title']?></a></h1>
+            </div>
+            <div class="story_image">
+                <img height="300" src="<?=$story['url']?>" alt="Ba Na Na">
             </div>
             <div class="story_details">
                 <span id="user">Posted by <?= htmlspecialchars($story['username']) ?></span>
@@ -71,7 +71,7 @@
         <script src="../js/comments.js" defer></script>
         <!-- <form class="add_comment" action='../actions/action_comment.php' method="post" enctype="multipart/form-data"> -->
         <textarea name="inserted_comment" rows="1" cols="80" placeholder="Share your thoughts" required></textarea>
-        
+
         <input type="submit" name="submit" value="Submit" onclick="add_first_layer_comment_js(0, <?= $story['id']?>)"/>
         <!-- </form> -->
     </section>
@@ -81,12 +81,12 @@
             <li>
                 <p><?= htmlspecialchars($comment['content']) ?></p>
                 <p>by <?= $comment['username'] ?></p>
-                
+
                 <!--
                 <textarea name="comment" rows="1" cols="80" placeholder="Share your thoughts" required></textarea>
                 <input type="submit" name="submit" value="Submit" onclick="add_comment_js(NULL , $story['id'])"> -->
 
-                
+
 
 
                 <?php $comment_list = get_all_comments_from_comment($comment['id']);
@@ -94,7 +94,7 @@
                 // var_dump($comment['id']);
                 ?>
             </li>
-            
+
             <?php
             if($comment_list != false){
                 recursive_comment($comment, 0);
@@ -114,7 +114,7 @@ function recursive_comment($comment, $counter){
     <ul>
         <?php foreach ($comment_list as $son) {?>
             <li>
-            
+
             <p ><?= htmlspecialchars($son['content']) ?></p>
             <p>by <?= htmlspecialchars($son['username']) ?></p>
 
@@ -124,7 +124,7 @@ function recursive_comment($comment, $counter){
             <textarea name="comment" rows="1" cols="80" placeholder="Share your thoughts" required></textarea>
             <input type="submit" name="submit" value="Submit" onclick="add_comment_js($son['id'], $story['id'])"> -->
 
-            
+
             <?php
             if($comment_list != false)
                 recursive_comment($son, $counter + 1); ?>

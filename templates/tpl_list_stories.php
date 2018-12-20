@@ -13,7 +13,7 @@
             <script src="../js/main.js" defer></script>
             <div class="story_content">
                 <div class="story_image">
-                    <img src="../post_images/board.png" alt="Image">
+                    <img src=<?=$story['url']?> alt=":/">
                 </div>
 
                 <div class="story_text">

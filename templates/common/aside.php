@@ -1,6 +1,6 @@
 <aside class="side_bar">
         <section id="create_post">
-            <img src="../../images/create_post.jpeg" alt="Create">
+            <img src="../images/create_post.jpeg" alt="Create">
             <span><a href="../pages/create_story.php"> Create a Story</a></span>
         </section>
         <section id="trending_categories">
