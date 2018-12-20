@@ -22,29 +22,19 @@
     $user = get_id_user_with_username($_SESSION['username']);
     $id_user = $user['id'];
 
-    $content = $_POST['a'];
+
+    $content = $_POST['comment_input'];
     $id_parent = $_POST['id_parent'];
     $id_story = $_POST['id_story'];
     $date_posted = date("Y-m-d h:i:s");
 
+
+    //var_dump($id_story);
+
     //add_comment($id_story, $id_user, $id_parent, $content, $date_posted);
 
-    if($id_parent == '0'){
-        add_comment($id_story, $id_user, NULL, $content, $date_posted);
-    } else{
-        add_comment($id_story, $id_user, $id_parent, $content, $date_posted);
-    }
+    add_comment($id_story, $id_user, 1, $content, $date_posted);
 
-    $user_name = get_username_from_user_id($id_user);
-    $username = $user_name['username'];
-    //header('Location: ../pages' . '/' . $_SESSION['curr_file']);
-
-    echo json_encode(array(
-        'content' => $content,
-        'id_story' => $id_story,
-        'user_name' => $username,
-        'date_posted' =>$date_posted ));
-
-
+    header('Location: ../pages' . '/' . $_SESSION['curr_file']);
 
  ?>

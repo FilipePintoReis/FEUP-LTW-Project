@@ -1,6 +1,6 @@
 <section id="story_content">
 
-<script src="../js/main.js" defer></script>
+    <script src="../js/main.js" defer></script>
     <article id=<?=$story['id']?>>
         <header>
             <h2><?=$story['name']?></h2>
@@ -66,74 +66,19 @@
 
     </article>
 
-
-    <section id="add_comment">
-        <script src="../js/comments.js" defer></script>
-        <!-- <form class="add_comment" action='../actions/action_comment.php' method="post" enctype="multipart/form-data"> -->
-        <textarea name="inserted_comment" rows="1" cols="80" placeholder="Share your thoughts" required></textarea>
-        
-        <input type="submit" name="submit" value="Submit" onclick="add_first_layer_comment_js(0, <?= $story['id']?>)"/>
-        <!-- </form> -->
-    </section>
-
     <ul id="story_comments">
+        <form class="add_comment" action='../actions/action_comment.php' method="post" enctype="multipart/form-data">
+                <textarea name="comment_input" rows="3" cols="80" placeholder="Share your thoughts"></textarea>
+                <input  type="hidden" name="id_story" value="<?=$story['id']?>">
+                <input type="submit" name="submit" value="Submit">
+        </form>
         <?php foreach ($comments_result as $comment) {?>
-            <li>
-                <p><?= htmlspecialchars($comment['content']) ?></p>
-                <p>by <?= $comment['username'] ?></p>
-                
-                <!--
-                <textarea name="comment" rows="1" cols="80" placeholder="Share your thoughts" required></textarea>
-                <input type="submit" name="submit" value="Submit" onclick="add_comment_js(NULL , $story['id'])"> -->
-
-                
-
-
-                <?php $comment_list = get_all_comments_from_comment($comment['id']);
-                // var_dump($comment_list);
-                // var_dump($comment['id']);
-                ?>
-            </li>
             
-            <?php
-            if($comment_list != false){
-                recursive_comment($comment, 0);
-            } ?>
+            <p><?= htmlspecialchars($comment['content']) ?></p>
+            <p>by <?= $comment['username'] ?></p>
+            
+
+                
         <?php } ?>
     </ul>
 </section>
-
-<?php
-
-function recursive_comment($comment, $counter){
-
-    $comment_list = get_all_comments_from_comment($comment['id']);
-    // echo $comment_list;
-
-    ?>
-    <ul>
-        <?php foreach ($comment_list as $son) {?>
-            <li>
-            
-            <p ><?= htmlspecialchars($son['content']) ?></p>
-            <p>by <?= htmlspecialchars($son['username']) ?></p>
-
-            <?php echo $story['id'] ?>
-
-            <!--
-            <textarea name="comment" rows="1" cols="80" placeholder="Share your thoughts" required></textarea>
-            <input type="submit" name="submit" value="Submit" onclick="add_comment_js($son['id'], $story['id'])"> -->
-
-            
-            <?php
-            if($comment_list != false)
-                recursive_comment($son, $counter + 1); ?>
-            </li>
-    <?php } ?>
-    </ul>
-
-
-
-<?php
-}
-?>
