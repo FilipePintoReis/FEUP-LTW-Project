@@ -4,9 +4,6 @@
     include_once(ABSPATH . '/database/db_stories.php');
     include_once(ABSPATH . '/database/db_user.php');
     header('Content-Type: application/json');
-
-  
-
     
     if(!isset($_SESSION['username'])) {
         $_SESSION['error_messages'][] = 'You need to be logged in to vote!';
