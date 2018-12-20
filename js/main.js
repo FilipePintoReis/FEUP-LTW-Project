@@ -30,21 +30,11 @@ req.onreadystatechange = function() {
 
 function vote(id_story, value) {                       
 
- vote1(id_story, value);
-
-}
-
-function vote1(id_story, value) {                       
-
   // Ajax req
   req.open("post", "../actions/action_vote_story.php", true)
   req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded') 
 
   req.send(encodeForAjax({id_story: id_story, value: value}))
-}
-
-function vote2(){
-    document.getElementsByTagName("button").getElementsByClassName('fas fa-caret-square-up');
 }
 
 // Helper function
@@ -53,6 +43,5 @@ function encodeForAjax(data) {
     return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
   }).join('&')
 }
-
 
 /********      BUTTONS      ********/

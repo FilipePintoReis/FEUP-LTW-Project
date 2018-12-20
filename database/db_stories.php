@@ -79,6 +79,14 @@
         return true;
     };
 
+    function add_comment($id_story, $id_user, $id_parent, $content, $date_posted){
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('INSERT INTO Comment VALUES (NULL, ?, ?, ?, ?, ?, 0, 0);
+                            ');
+        $stmt->execute(array($id_story, $id_user, $id_parent, $content, $date_posted));
+        return true;
+    }
+
     function update_picture_story($id_story, $picture) {
         global $dbh;
         $stmt = $dbh->prepare('UPDATE Story SET picture = ? WHERE id = ?');
@@ -94,6 +102,19 @@
         $stmt->execute(array($channel_name));
         return $stmt->fetch();
     }
+
+    function get_username_from_user_id($id_user){
+        $db = Database::instance()->db();
+        $stmt = $db->prepare('  SELECT User.username FROM User
+                                WHERE User.id = ?;
+                            ');
+        $stmt->execute(array($id_user));
+        return $stmt->fetch();
+    }
+
+
+
+
 
     /* *****   STORY VOTES   ***** */
 

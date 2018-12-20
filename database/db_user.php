@@ -5,7 +5,7 @@
     function validate_login($username, $password) {
         $db = Database::instance()->db();
         $stmt = $db->prepare('SELECT * FROM User WHERE username = ? AND password = ?');
-        $stmt->execute(array($username, $password));
+        $stmt->execute(array($username, md5($password)));
         return ($stmt->fetch() !== false);
       }
 
@@ -40,7 +40,7 @@
       function add_user($username, $password, $fullname, $email) {
           $db = Database::instance()->db();
           $stmt = $db->prepare('INSERT INTO USER VALUES (NULL, ?, ?, ?, ?, NULL, NULL);');
-          $stmt->execute(array($username, $password, $fullname, $email));
+          $stmt->execute(array($username, md5($password), $fullname, $email));
       }
 
       function update_user($id, $username, $fullname, $email, $bio) {
