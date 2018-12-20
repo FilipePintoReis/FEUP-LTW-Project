@@ -1,6 +1,6 @@
 <section id="story_content">
 
-<script src="../js/main.js" defer></script>
+    <script src="../js/main.js" defer></script>
     <article id=<?=$story['id']?>>
         <header>
             <h2><?=$story['name']?></h2>
@@ -77,6 +77,11 @@
     </section>
 
     <ul id="story_comments">
+        <form class="add_comment" action='../actions/action_comment.php' method="post" enctype="multipart/form-data">
+                <textarea name="comment_input" rows="3" cols="80" placeholder="Share your thoughts"></textarea>
+                <input  type="hidden" name="id_story" value="<?=$story['id']?>">
+                <input type="submit" name="submit" value="Submit">
+        </form>
         <?php foreach ($comments_result as $comment) {?>
             <li>
                 <p><?= htmlspecialchars($comment['content']) ?></p>
