@@ -288,6 +288,27 @@ body > * {
     font-weight: normal;
 }
 
+#story_content, #edit_profile, #login, #signup {
+    background-color:#233237;
+    display:flex;
+    flex-direction: column;
+}
+
+
+#story_content * {
+    background-color:#233237;
+    color:white;
+    text-decoration: none;
+}
+
+#story_content {
+    background-color:#233237;
+    border: solid;
+    border-width: thin;
+    border-radius: 5px;
+    border-color: #FFFFFF;
+}
+
 body {
 
     font-family: "Roboto", "Open Sans", Arial, sans-serif;

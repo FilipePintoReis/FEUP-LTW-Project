@@ -21,4 +21,8 @@
         include(ABSPATH . '/templates/tpl_list_stories.php');
     ?>
 </section>
-<?php  include(ABSPATH . '/templates/common/footer.php');?>
+
+<?php
+    include(ABSPATH . '/templates/common/aside.php');
+    include(ABSPATH . '/templates/common/footer.php');
+?>

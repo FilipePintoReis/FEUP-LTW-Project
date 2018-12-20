@@ -11,10 +11,9 @@
     $paragraphs = explode('\n', $story['content']);
     $comments_result = get_all_comments_from_story($_GET['id']);
 
-
-
     include(ABSPATH . '/templates/common/header.php');
     include(ABSPATH . '/templates/common/alerts.php');
     include(ABSPATH . '/templates/tpl_story.php');
+    include(ABSPATH . '/templates/common/aside.php');
     include(ABSPATH . '/templates/common/footer.php');
 ?>

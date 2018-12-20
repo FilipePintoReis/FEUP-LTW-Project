@@ -158,7 +158,7 @@ body{
     min-width: 650px;
 }
 
-.profile_content {
+.profile_content, #story_content, #edit_profile, , #login, #signup {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -169,8 +169,13 @@ body{
     justify-content: center;
 }
 
-.profile_content > * {
+.profile_content > *, #story_content > * {
     width:80%;
+}
+
+#story_content {
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 .profile_content > .profile_info {
@@ -180,7 +185,7 @@ body{
     flex-grow: 1;
     justify-content: space-around;
     margin-right: 40px;
-    margin-left: 20px;
+    margin-left: 40px;
     margin-bottom: 10px;
     height:200px;
 }
