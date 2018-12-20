@@ -10,12 +10,12 @@
 
     if(!isset($_SESSION['username'])) {
         $_SESSION['error_messages'][] = 'You need to be logged in to comment!';
-        die(header('Location: ../pages' . '/' . $_SESSION['curr_file']);
+        die(header('Location: ../pages' . '/' . $_SESSION['curr_file']));
     }
 
     if ( !preg_match ("/^[\w\s-?!\.()]*$/", $_GET['a'])) {
         $_SESSION['error_messages'][] = "ERROR: comment can only contain letters, numbers and most common punctuaction";
-        die(header('Location: ../pages' . '/' . $_SESSION['curr_file']);
+        die(header('Location: ../pages' . '/' . $_SESSION['curr_file']));
 
     }
 
@@ -33,7 +33,16 @@
 
     //add_comment($id_story, $id_user, $id_parent, $content, $date_posted);
 
-    add_comment($id_story, $id_user, 1, $content, $date_posted);
+    if($id_parent == '0'){
+        add_comment($id_story, $id_user, NULL, $content, $date_posted);
+    } else{
+        add_comment($id_story, $id_user, $id_parent, $content, $date_posted);
+    }
+
+    $user_name = get_username_from_user_id($id_user);
+    $username = $user_name['username'];
+    
+
 
     header('Location: ../pages' . '/' . $_SESSION['curr_file']);
 

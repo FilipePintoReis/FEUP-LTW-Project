@@ -77,8 +77,6 @@
             <p><?= htmlspecialchars($comment['content']) ?></p>
             <p>by <?= $comment['username'] ?></p>
             
-
-                
         <?php } ?>
     </ul>
 </section>
